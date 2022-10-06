@@ -1,4 +1,5 @@
 # Web Development Project
+You can edit or optimize the code, Just follow the Rules
 
 __This is the Web Development Project Repository for Finals__ 
 
