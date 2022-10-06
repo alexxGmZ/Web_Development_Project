@@ -1,26 +1,15 @@
-# Database Wannabe
+# Web Development Project
 
-__This is the Web Systems & Technologies Database Laboratory Activity__ 
+__This is the Web Development Project Repository for Finals__ 
 
 __Contributing Members:__
-* Gomez A. (Leader)
-* Esma
+* Gomez A.
 * Arganda
-* Bragais
 
 __Dependencies:__
 * Bootstrap Version 5
-* XAMPP 7.4.29
-* XAMPP for Linux 7.4.29-0 
-
-__Task List:__
-- [x] Required Fields
-- [x] Upload Validation
-- [x] Storing Data to Database
-- [x] Fetching Information from Database
-- [x] Output Created Articles to Landing Page
-- [x] Session Implementation
-- [x] Connect All Pages
+* XAMPP
+* XAMPP for Linux
 
 __Rules for Maintaining This Project__
 * Use TABS for indention for uniformity in all editors that uses TABS
