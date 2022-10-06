@@ -6,6 +6,7 @@ __This is the Web Development Project Repository for Finals__
 __Contributing Members:__
 * Gomez (alexxShandsome)
 * Arganda (earlylalo)
+* Encabo (orly20)
 
 __Dependencies:__
 * Bootstrap Version 5
