@@ -1,0 +1,9 @@
+.registration_area{
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bio_textarea_height{
+	height: 200px;
+}

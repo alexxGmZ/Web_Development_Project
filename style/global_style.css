@@ -1,0 +1,25 @@
+body{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.teal{
+	background-color: #008080;
+}
+
+.teal_text{
+	color: #008080;
+}
+
+.red_text{
+	color: red;
+}
+
+.has_error{ 
+	color: #842029; 
+} 
+
+.has_error textarea, .has_error input, .has_error select{ 
+	color: #842029; 
+	border-color: #842029; 
+	background-color: #f8d7da; 
+} 
