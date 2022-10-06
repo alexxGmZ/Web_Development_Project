@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Landing Page</title>
+	<title>Home Page</title>
 	<link href="./style/global_style.css" rel="stylesheet" type="text/css">
 	<link href="./style/landing_page.css" rel="stylesheet" type="text/css">
 
