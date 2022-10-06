@@ -4,8 +4,8 @@ You can edit or optimize the code, Just follow the Rules
 __This is the Web Development Project Repository for Finals__ 
 
 __Contributing Members:__
-* Gomez A.
-* Arganda
+* Gomez (alexxShandsome)
+* Arganda (earlylalo)
 
 __Dependencies:__
 * Bootstrap Version 5
@@ -13,9 +13,10 @@ __Dependencies:__
 * XAMPP for Linux
 
 __Rules for Maintaining This Project__
-* Use TABS for indention for uniformity in all editors that uses TABS
-* Follow Proper indention formatting
-* Code readability is priority, "It's okay to be buggy as long as readable"
+* Use TABS for indention for uniformity in all editors that uses TABS, do not convert tabs to spaces.
+* Follow Proper indention formatting.
+* Code readability is priority, "It's okay to be buggy as long as readable".
+* Push changes in the ```testing``` branch because ```main``` is for production only, which means it should be stable and has little bugs.
 
 __Database Name:__ article_site
 __Table/s:__
