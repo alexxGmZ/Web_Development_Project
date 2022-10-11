@@ -32,7 +32,7 @@ __Things To Do:__
 * Improve Navbar design (```navbar.php``` and ```logged_in_navbar.php```)
 
 __Known Bug/s:__
-*
+* 
 
 __New Database Name:__ memesite
 __Table/s:__
