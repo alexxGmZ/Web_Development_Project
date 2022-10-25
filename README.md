@@ -2,7 +2,7 @@
 
 You can edit or optimize the code, Just follow the Rules
 
-__This is the Web Development Project Repository for Finals__ 
+## This is the Web Development Project Repository for Finals
 
 
 
@@ -48,15 +48,19 @@ __Things To Do:__
 
 __Known Bug/s:__
 
-* __New Database Name:__ memesite
+* Insert known bugs here
+
+
+
+__New Database Name:__ memesite
 
 __Table/s:__
 
 ```
-
+Example:
+<table name>
+   * column
 ```
-
-
 
 __Old Database Name:__ article_site
 
@@ -64,22 +68,22 @@ __Table/s:__
 
 ```
 Registered_Users
-    * FIRST_NAME      varchar(30)
-    * LAST_NAME       varchar(30)
-    * USER_NAME       varchar(30)
-    * EMAIL           varchar(30) (PK)
-    * PASSWORD        text
-    * GENDER          varchar(30)
-    * BIRTHDAY        date
-    * ADDRESS         text
-    * PROFILE_PIC     text
-    * BIO             text
+   * FIRST_NAME      varchar(30)
+   * LAST_NAME       varchar(30)
+   * USER_NAME       varchar(30)
+   * EMAIL           varchar(30) (PK)
+   * PASSWORD        text
+   * GENDER          varchar(30
+   * BIRTHDAY        date
+   * ADDRESS         text
+   * PROFILE_PIC     text
+   * BIO             text
 
 Written_Article
-    * HEADLINE        varchar(200) (PK)
-    * CONTENT         text
-    * AUTHOR          varchar(30)
-    * THUMBNAIL       text
-    * CATEGORY        varchar(30)
-    * PUBLISH_DATE    date
+   * HEADLINE        varchar(200) (PK)
+   * CONTENT         text
+   * AUTHOR          varchar(30)
+   * THUMBNAIL       text
+   * CATEGORY        varchar(30)
+   * PUBLISH_DATE    date
 ```
