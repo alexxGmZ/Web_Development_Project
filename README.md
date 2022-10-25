@@ -4,23 +4,17 @@ You can edit or optimize the code, Just follow the Rules
 
 __This is the Web Development Project Repository for Finals__ 
 
-
-
 __Contributing Members:__
 
 * Gomez (alexxShandsome)
 * Arganda (earlylalo)
 * Encabo (orly20)
 
-
-
 __Dependencies:__
 
 * Bootstrap Version 5
 * XAMPP
 * XAMPP for Linux
-
-
 
 __Rules for Maintaining This Project__
 
@@ -30,8 +24,6 @@ __Rules for Maintaining This Project__
 * Push changes in the ```testing``` branch because ```main``` is for production only, which means it should be stable and has little bugs.
 * Every page has should have their own separate CSS file.
 * List ecountered bugs in the "Known Bug/s" section.
-
-
 
 __Things To Do:__
 
@@ -44,19 +36,19 @@ __Things To Do:__
 * Redesign and Rename New Article page to New Post (```new_article.php``` to ```new_post.php```)
 * Improve Navbar design (```navbar.php``` and ```logged_in_navbar.php```)
 
-
-
 __Known Bug/s:__
 
-* __New Database Name:__ memesite
+* (Insert known bugs here)
+
+
+
+__New Database Name: memesite__
 
 __Table/s:__
 
 ```
 
 ```
-
-
 
 __Old Database Name:__ article_site
 
