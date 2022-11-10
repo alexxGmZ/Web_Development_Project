@@ -1,4 +1,4 @@
-<?php 
+<?php
 	// database connection and session functions
 	require_once './partial/database_connection.php';
 	if(isset($_SESSION['is_logged_in'])){
@@ -35,7 +35,7 @@
 	<title>Log-In</title>
 	<link href="./style/global_style.css" rel="stylesheet" type="text/css">
 	<link href="./style/login_css.css" rel="stylesheet" type="text/css">
-  
+
 	<?php
 		require_once './style/bootstrap.html';
 		require_once './style/ubuntu_regular_font.html';
@@ -83,10 +83,10 @@
 			<center>
 				<!-- Login Button -->
 				<button name="login_submit" type="submit" class="btn btn-success rounded-pill mb-3">
-					Log-In   
+					Log-In
 				</button>
 				<!-- Login Button -->
-				
+
 				<p>or</p>
 				<!-- Create Account or Register Button -->
 				<a href="registration.php" class="btn btn-outline-success rounded-pill" >

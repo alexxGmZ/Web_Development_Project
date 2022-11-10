@@ -17,9 +17,9 @@
 			</button>
 		</form>
 		<!-- End of Search Bar and Icon Button -->
-		
-		<a class="btn btn-outline-success me-2 rounded-pill" href="./new_article.php">Write Article</a>	
-		<a class="btn btn-outline-primary me-2 rounded-pill" href="">Profile</a>
+
+		<a class="btn btn-outline-success me-2 rounded-pill" href="./new_article.php">Write Article</a>
+		<a class="btn btn-outline-primary me-2 rounded-pill" href="./user_profile.php">Profile</a>
 		<a class="btn btn-danger rounded-pill me-3" href="./login_session/logout.php">Log-out</a>
 	</div>
 </nav>

@@ -37,7 +37,6 @@ __Things To Do:__
 
 * Change Color Scheme (Lean more on Pastel or Lighter color)
 * Restructure Database and its Tables to Fit the new Project
-* Create a User Profile Page (```user_profile.php```)
 * Redesign Landing Page (```landing.php```)
 * Redesign Registration Page (```registration.php```)
 * Redesign Login Page (```login.php```)

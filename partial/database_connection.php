@@ -1,10 +1,4 @@
-<?php 
-	
-	// $con=mysqli_connect('localhost','root','','article_site');
-	// if(!$con){
-	//	die('Please check your connection'.mysqli_error());
-	// }
-
+<?php
 	session_start();
 	//echo '<pre>';
 	//var_dump($_SESSION);
@@ -17,9 +11,9 @@
 
 	function registration_insert_user($pdo, $firstname, $lastname, $username, $email, $password, $gender, $birthday, $home_add, $profile_pic, $short_bio){
 		$statement = $pdo->prepare('
-			INSERT INTO `Registered_Users` 
+			INSERT INTO `Registered_Users`
 				(`FIRST_NAME`, `LAST_NAME`, `USER_NAME`, `EMAIL`, `PASSWORD`, `GENDER`, `BIRTHDAY`, `ADDRESS`, `PROFILE_PIC`, `BIO`)
-			VALUES 
+			VALUES
 				(:FIRST_NAME, :LAST_NAME, :USER_NAME, :EMAIL, :PASSWORD, :GENDER, :BIRTHDAY, :ADDRESS, :PROFILE_PIC, :BIO)
 		');
 
@@ -40,7 +34,7 @@
 		$statement = $pdo->prepare('
 			INSERT INTO `Written_Article`
 				(`HEADLINE`, `CONTENT`, `AUTHOR`, `THUMBNAIL`, `CATEGORY`, `PUBLISH_DATE`)
-			VALUES 
+			VALUES
 				(:HEADLINE, :CONTENT, :AUTHOR, :THUMBNAIL, :CATEGORY, :PUBLISH_DATE)
 		');
 
@@ -53,12 +47,11 @@
 		$statement->execute();
 	}
 
-
 	function get_user_login($email,$password,$pdo){
 
 		//$password = md5($password);
 		$statement = $pdo->prepare('
-			SELECT * FROM `Registered_Users` 
+			SELECT * FROM `Registered_Users`
 			WHERE `EMAIL` = :EMAIL AND `PASSWORD` = :PASSWORD
 		');
 
@@ -72,13 +65,5 @@
 
 		return $users;
 	}
-
-	// Don't know what to do here yet (Might Produce Problem/s)
-	function get_session_array($sess){ // assigns array values
-		$user_session = array();
-		$user_session = $sess;
-		return $user_session;
-	}
-	// Don't know what to do here yet (Might Produce Problem/s)
 
 ?>
