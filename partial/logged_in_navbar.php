@@ -20,7 +20,7 @@
 
 		<a class="btn btn-outline-success me-2 rounded-pill" href="./new_article.php">Write Article</a>
 		<a class="btn btn-outline-primary me-2 rounded-pill" href="./user_profile.php">Profile</a>
-		<a class="btn btn-danger rounded-pill me-3" href="./login_session/logout.php">Log-out</a>
+		<a class="btn btn-danger rounded-pill me-3" href="./partial/logout.php">Log-out</a>
 	</div>
 </nav>
 <!-- End of Navigation Bar -->
