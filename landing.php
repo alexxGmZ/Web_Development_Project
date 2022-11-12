@@ -78,25 +78,36 @@
 					}
 					else{
 						echo <<< SUB_ARTICLES
-						<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
-							<img class="mb-3" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
+							<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
 
-							<h2 class="text-center">
-								{$articles[$index]["HEADLINE"]}
-							</h2>
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<img class="mb-3 image" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
+								</div>
+								<div class="col-lg-2"></div>
 
-							<h4 class="text-center">
-								By: {$articles[$index]["AUTHOR"]}
-							</h4>
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<h2 class="text-center">
+										{$articles[$index]["HEADLINE"]}
+									</h2>
 
-							<strong class="text-center">
-								{$articles[$index]["PUBLISH_DATE"]}
-							</strong>
+									<h4 class="text-center">
+										By: {$articles[$index]["AUTHOR"]}
+									</h4>
 
-							<p class="ps-4 pe-4">
-								{$articles[$index]["CONTENT"]}
-							</p>
-						</div>
+									<p class="text-center">
+										<strong>
+											{$articles[$index]["PUBLISH_DATE"]}
+										</strong>
+									</p>
+
+									<p class="ps-4 pe-4">
+										{$articles[$index]["CONTENT"]}
+									</p>
+								</div>
+								<div class="col-lg-2"></div>
+							</div>
 						SUB_ARTICLES;
 					}
 				}
