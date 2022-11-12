@@ -1,5 +1,5 @@
 <!-- Navigation Bar -->
-<nav class="row navbar sticky-top bg-light border-bottom border-3">
+<nav class="row navbar sticky-top bg-opacity-75 bg-light">
 	<!-- Site Page Name / Logo -->
 	<div class="col d-flex justify-content-start ms-3">
 		<a class="teal_text navbar-brand fw-bolder fs-2" href="landing.php">Site Name Here</a>
