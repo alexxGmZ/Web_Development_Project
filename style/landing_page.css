@@ -1,0 +1,14 @@
+body {
+    box-sizing: border-box;
+}
+/* .main {
+    background-color: #1A1A1D;
+} */
+.image {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+}
+.content {
+    text-indent: 5%;
+}
