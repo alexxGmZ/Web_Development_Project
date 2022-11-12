@@ -39,64 +39,64 @@
 			require './partial/navbar.php';
 	?>
 	<!-- End of Navigation Bar -->
+	<div class="container-fluid">
+		<div class="m-5">
+			<?php
+				for($index = 0 ; $index < $row_limit ; $index++){
+					// Make use don't convert spaces to tabs or the opposite, or it will parse error
+					// Heredoc strings are whitespace sensitive
+					if ($index == 0){
+						echo <<< HOTTEST_ARTICLE
+						<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
+							<h1 class="text-center mb-4">Hottest Topic</h1>
 
-	<div class="m-5">
-		<?php
-			for($index = 0 ; $index < $row_limit ; $index++){
-				// Make use don't convert spaces to tabs or the opposite, or it will parse error
-				// Heredoc strings are whitespace sensitive
-				if ($index == 0){
-					echo <<< HOTTEST_ARTICLE
-					<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
-						<h1 class="text-center mb-4">Hottest Topic</h1>
+							<img class="mb-3" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
 
-						<img class="mb-3" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
+							<h2 class="text-center">
+								{$articles[$index]["HEADLINE"]}
+							</h2>
 
-						<h2 class="text-center">
-							{$articles[$index]["HEADLINE"]}
-						</h2>
+							<h4 class="text-center">
+								By: {$articles[$index]["AUTHOR"]}
+							</h4>
 
-						<h4 class="text-center">
-							By: {$articles[$index]["AUTHOR"]}
-						</h4>
+							<strong class="text-center">
+								{$articles[$index]["PUBLISH_DATE"]}
+							</strong>
 
-						<strong class="text-center">
-							{$articles[$index]["PUBLISH_DATE"]}
-						</strong>
+							<p class="ps-4 pe-4">
+								{$articles[$index]["CONTENT"]}
+							</p>
+						</div>
+						HOTTEST_ARTICLE;
+					}
+					else{
+						echo <<< SUB_ARTICLES
+						<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
+							<img class="mb-3" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
 
-						<p class="ps-4 pe-4">
-							{$articles[$index]["CONTENT"]}
-						</p>
-					</div>
-					HOTTEST_ARTICLE;
+							<h2 class="text-center">
+								{$articles[$index]["HEADLINE"]}
+							</h2>
+
+							<h4 class="text-center">
+								By: {$articles[$index]["AUTHOR"]}
+							</h4>
+
+							<strong class="text-center">
+								{$articles[$index]["PUBLISH_DATE"]}
+							</strong>
+
+							<p class="ps-4 pe-4">
+								{$articles[$index]["CONTENT"]}
+							</p>
+						</div>
+						SUB_ARTICLES;
+					}
 				}
-				else{
-					echo <<< SUB_ARTICLES
-					<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
-						<img class="mb-3" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
-
-						<h2 class="text-center">
-							{$articles[$index]["HEADLINE"]}
-						</h2>
-
-						<h4 class="text-center">
-							By: {$articles[$index]["AUTHOR"]}
-						</h4>
-
-						<strong class="text-center">
-							{$articles[$index]["PUBLISH_DATE"]}
-						</strong>
-
-						<p class="ps-4 pe-4">
-							{$articles[$index]["CONTENT"]}
-						</p>
-					</div>
-					SUB_ARTICLES;
-				}
-			}
-		?>
+			?>
+		</div>
 	</div>
-
 	<!-- Footer -->
 	<?php require_once './partial/footer.php'; ?>
 	<!-- Footer -->
