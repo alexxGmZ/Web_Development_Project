@@ -22,8 +22,8 @@ __Rules for Maintaining This Project__
 * Follow Proper indention formatting.
 * Code readability is priority, "It's okay to be buggy as long as readable".
 * Push changes in the ```testing``` branch because ```main``` is for production only, which means it should be stable and has little bugs.
-* Every page has should have their own separate CSS file.
-* List ecountered bugs in the "Known Bug/s" section.
+* Every page should have their own separate CSS file.
+* List encountered bugs in the "Known Bug/s" section.
 
 __Things To Do:__
 
@@ -90,7 +90,7 @@ Registered_Users
    * USER_NAME       varchar(50)
    * EMAIL           text
    * PASSWORD        text
-   * GENDER          varchar(20)         
+   * GENDER          varchar(20)
    * BIRTHDAY        date
    * PROFILE_PIC     text
    * BIO             text
@@ -100,6 +100,7 @@ Written_Posts
    * USER_ID         int (FK)
    * TITLE           text
    * POST_IMAGE      text
+   * DATE_POSTED     date
    * UPVOTE          int
    * DOWNVOTE        int
 ```
