@@ -2,10 +2,9 @@
 	<div class="row mb-3">
 		<div class="col me-3">
 			<p class="fw-bold">Prepared by:</p>
+			<p class="ms-3">Earl Arganda</p>
+			<p class="ms-3">Orly Encabo</p>
 			<p class="ms-3">Algilbert Gomez</p>
-			<p class="ms-3">Jaali Zhen Esma</p>    
-			<p class="ms-3">Earl Arganda</p>    
-			<p class="ms-3">Earl Jann Bragais</p>    
 		</div>
 
 		<!-- Inquiries --->
