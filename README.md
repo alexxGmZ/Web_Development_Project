@@ -1,7 +1,7 @@
 # Web Development Project
-You can edit or optimize the code, Just follow the Rules
+This is the ```fuck-around``` branch, you can change here anything or practice some git stuff. This is **not a serious branch**.
 
-__This is the Web Development Project Repository for Finals__ 
+__This is the Web Development Project Repository for Finals__
 
 __Contributing Members:__
 * Gomez A.
