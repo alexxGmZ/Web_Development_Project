@@ -10,6 +10,7 @@
 <html>
 <head>
 	<link href="./style/global_style.css" rel="stylesheet" type="text/css">
+	<link href="./style/user_profile.css" rel="stylesheet" type="text/css">
 
 	<?php
 		require_once './style/bootstrap.html';
@@ -17,7 +18,7 @@
 	?>
 </head>
 
-<body>
+<body class="teal">
 	<?php
 		//require_once './partial/navbar.php';
 		//require './partial/logged_in_navbar.php';
@@ -28,9 +29,19 @@
 		else
 			require './partial/navbar.php';
 
-		echo '<pre>';
-		var_dump($_SESSION['user_info']);
-		echo '</pre>';
+		// echo '<pre>';
+		// var_dump($_SESSION['user_info']);
+		// echo '</pre>';
 	?>
+	<div class="text-center">
+		<h1 class="text-white p-3">Your Profile</h1>
+	</div>
+	<div class="profile_area bg-light rounded-3 p-3">
+		<?php
+			echo '<pre>';
+			var_dump($_SESSION['user_info']);
+			echo '</pre>';
+		?>
+	</div>
 </body>
 </html>
