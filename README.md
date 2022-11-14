@@ -32,8 +32,9 @@ __Things To Do:__
 * Redesign Landing Page (```landing.php```)
 * Redesign Registration Page (```registration.php```)
 * Redesign Login Page (```login.php```)
-* Redesign and Rename New Article page to New Post (```new_article.php``` to ```new_post.php```)
+* Redesign New Post Page (```new_post.php```)
 * Improve Navbar design (```navbar.php``` and ```logged_in_navbar.php```)
+* Create a logged out user page (view ```user_profile.php``` when logged out)
 
 __Known Bug/s:__
 
@@ -53,13 +54,13 @@ CREATE TABLE Registered_Users (
    FIRST_NAME VARCHAR(50) NOT NULL,
    LAST_NAME VARCHAR(50) NOT NULL,
    USER_NAME VARCHAR(50) NOT NULL,
-   EMAIL TEXT NOT NULL,   
+   EMAIL TEXT NOT NULL,
    PASSWORD TEXT NOT NULL,
    GENDER VARCHAR(20) NOT NULL,
    BIRTHDAY DATE NOT NULL,
    PROFILE_PIC TEXT NOT NULL,
    BIO TEXT NOT NULL,
-   PRIMARY KEY (USER_ID)  
+   PRIMARY KEY (USER_ID)
 );
 
 CREATE TABLE Written_Posts (
