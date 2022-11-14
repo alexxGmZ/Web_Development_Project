@@ -18,7 +18,7 @@
 	?>
 </head>
 
-<body class="teal">
+<body class="">
 	<?php
 		//require_once './partial/navbar.php';
 		//require './partial/logged_in_navbar.php';
@@ -34,9 +34,9 @@
 		// echo '</pre>';
 	?>
 	<div class="text-center">
-		<h1 class="text-white p-3">Your Profile</h1>
+		<h1 class="text-dark fw-bold p-3">Your Profile</h1>
 	</div>
-	<div class="profile_area bg-light rounded-3 p-3">
+	<div class="profile_area border shadow-lg rounded-3 p-3">
 		<?php
 			echo '<pre>';
 			var_dump($_SESSION['user_info']);
