@@ -1,5 +1,5 @@
 <!-- Navigation Bar -->
-<nav class="navbar sticky-top bg-light">
+<nav class="border-bottom navbar sticky-top bg-light">
 	<div class="container-fluid">
 		<!-- Site Page Name / Logo -->
 		<div class="col-auto d-flex justify-content-start ms-3">

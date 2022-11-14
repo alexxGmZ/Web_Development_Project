@@ -4,8 +4,8 @@
 
 	// Only 10 Articles can be outputted in the landing page
 	$statement = $pdo->prepare('
-		SELECT * FROM `Written_Article` 
-		ORDER BY `Written_Article`.`PUBLISH_DATE` DESC 
+		SELECT * FROM `Written_Article`
+		ORDER BY `Written_Article`.`PUBLISH_DATE` DESC
 		LIMIT 10
 	');
 	$statement->execute();
@@ -22,13 +22,13 @@
 
 	<?php
 		require_once './style/bootstrap.html';
-		require_once './style/ubuntu_regular_font.html';	
+		require_once './style/ubuntu_regular_font.html';
 	?>
 </head>
 
-<body class="teal">
+<body class="">
 	<!-- Navigation Bar -->
-	<?php 
+	<?php
 		//require_once './partial/navbar.php';
 		//require './partial/logged_in_navbar.php';
 
@@ -47,8 +47,8 @@
 				// Heredoc strings are whitespace sensitive
 				if ($index == 0){
 					echo <<< HOTTEST_ARTICLE
-						<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
-	
+						<div class="row rounded-2 border shadow mb-3 pt-3 pb-3">
+
 							<h1 class="text-center mb-4">Hottest Topic</h1>
 
 							<div class="col-lg-2"></div>
@@ -81,7 +81,7 @@
 				}
 				else{
 					echo <<< SUB_ARTICLES
-						<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
+						<div class="row rounded-2 border shadow-lg mb-2 pt-3 pb-3">
 
 							<div class="col-lg-2"></div>
 							<div class="col-lg-8">

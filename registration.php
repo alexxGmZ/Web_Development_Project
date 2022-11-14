@@ -97,14 +97,14 @@
 	?>
 </head>
 
-<body class="teal">
+<body class="">
 
 	<!-- Navbar -->
 	<?php require_once './partial/navbar.php'; ?>
 	<!-- Navbar -->
 
 	<div class="text-center">
-		<h1 class="text-white p-3">Registration Form</h1>
+		<h1 class="text-dark fw-bold p-3">Registration Form</h1>
 
 		<!-- Error Message -->
 		<?php if($has_error == 1): ?>
@@ -116,16 +116,16 @@
 		<!-- Error Message -->
 	</div>
 
-	<div class="bg-light registration_area rounded-3 p-3">
+	<div class="border shadow-lg registration_area rounded-3 p-3">
 		<form class="ms-2 me-2 mb-2 mt-4" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
 			<!-- Name -->
-			<div class="form-floating mb-3 
+			<div class="form-floating mb-3
 				<?php echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($firstname) || strlen(trim($firstname)) == 0) ? 'has_error' : '' ); ?>">
 				<input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name" value="<?php echo $firstname; ?>">
 				<label>First Name:</label>
 			</div>
 
-			<div class="form-floating mb-3 
+			<div class="form-floating mb-3
 				<?php echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($lastname) || strlen(trim($lastname)) == 0) ? 'has_error' : '' ); ?>">
 				<input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name" value="<?php echo $lastname; ?>">
 				<label>Last Name: </label>
@@ -133,7 +133,7 @@
 			<!-- Name -->
 
 			<!--- Username --->
-			<div class="form-floating mb-3 
+			<div class="form-floating mb-3
 				<?php echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && (!isset($username) || strlen(trim($username)) == 0) ? 'has_error' : '' ); ?>">
 				<input type="text" class="form-control" placeholder="floatinginput" id="username" name="username" value="<?php echo $username; ?>">
 				<label>Username: </label>
@@ -141,15 +141,15 @@
 			<!--- Username --->
 
 			<!--- Email --->
-			<div class="form-floating mb-3 
+			<div class="form-floating mb-3
 				<?php echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($email) || strlen(trim($email)) == 0) ? 'has_error' : '' ); ?>">
 				<input type="text" class="form-control" id="email" name="email" placeholder="email" value="<?php echo $email; ?>">
 				<label>Email: </label>
-			</div> 
+			</div>
 			<!--- Email --->
 
 			<!--- Password --->
-			<div class="form-floating mb-1 
+			<div class="form-floating mb-1
 				<?php echo ( $_SERVER['REQUEST_METHOD'] === 'POST' &&( !isset($password) || strlen(trim($password)) == 0) ? 'has_error' : '' ); ?>">
 				<input type="password" class="form-control" id="login_password" name="password" placeholder=" ">
 				<label>Password: </label>
@@ -224,7 +224,7 @@
 
 			<!-- Terms Agreement -->
 			<div class="text-center mb-2">
-				<div class="form-check form-check-inline mt-4 
+				<div class="form-check form-check-inline mt-4
 					<?php echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($agree_terms1) || strlen(trim($agree_terms1)) == 0) ? 'has_error' : '' ); ?>">
 					<input class="form-check-input" type="checkbox" value="1" id="agree_terms1" name="agree_terms1">
 					<label class="form-check-label" for="flexCheckChecked">
@@ -232,7 +232,7 @@
 					</label>
 				</div>
 
-				<div class="form-check form-check-inline 
+				<div class="form-check form-check-inline
 					<?php echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($agree_terms2) || strlen(trim($agree_terms2)) == 0) ? 'has_error' : '' ); ?>">
 					<input class="form-check-input" type="checkbox" value="1" id="agree_terms2" name="agree_terms2">
 					<label class="form-check-label" for="flexCheckChecked">
@@ -256,7 +256,7 @@
 			</div>
 			<!-- Submit Button -->
 
-			<p class="text-center"> Already a member? 
+			<p class="text-center"> Already a member?
 				<a class="text-decoration-none" href="./login.php">Login Here</a>
 			</p>
 		</form>

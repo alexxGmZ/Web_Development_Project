@@ -88,7 +88,7 @@
 	?>
 </head>
 
-<body class="teal">
+<body class="">
 	<!-- Navbar -->
 	<?php
 		// require_once './partial/navbar.php';
@@ -103,7 +103,7 @@
 	<!-- Navbar -->
 
 	<div class="text-center">
-		<h1 class="text-white p-3">Create Article</h1>
+		<h1 class="text-dark fw-bold p-3">Create Article</h1>
 		<!-- Error Message -->
 		<?php if($has_error == 1): ?>
 			<div class="col-6 mx-auto alert alert-danger pt-3 pb-3" role="alert">
@@ -114,7 +114,7 @@
 		<!-- Error Message -->
 	</div>
 
-	<div class="new_article_area mt-3 mb-4 p-3 bg-light rounded-3">
+	<div class="new_article_area border shadow-lg mt-3 mb-4 p-3 rounded-3">
 		<form class="m-2" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
 		  <!-- Headline -->
 			<div class="mb-3
