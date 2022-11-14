@@ -103,7 +103,7 @@
 	<!-- Navbar -->
 
 	<div class="text-center">
-		<h1 class="text-dark fw-bold p-3">Create Article</h1>
+		<h1 class="text-dark fw-bold p-3">Post a Meme</h1>
 		<!-- Error Message -->
 		<?php if($has_error == 1): ?>
 			<div class="col-6 mx-auto alert alert-danger pt-3 pb-3" role="alert">
@@ -216,7 +216,7 @@
 
 			<!-- Publish Button -->
 			<div class="text-center mb-1">
-				<button name="submit" type="submit" class="btn btn-success rounded-pill">Publish Article</button>
+				<button name="submit" type="submit" class="btn btn-success rounded-pill">Post Meme</button>
 				<?php
 					if(isset($_POST['submit']) && $has_error == 0){
 						insert_new_article($pdo, $headline, $content, $category, $publish_date, $thumbnail, $author_name);
