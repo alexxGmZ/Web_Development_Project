@@ -9,8 +9,7 @@ You can edit or optimize the code, Just follow the Rules
 * [Dependencies](#Dependencies)
 * [Rules for Maintaining This Project](#Rules-for-Maintaining-This-Project)
 * [Things To Do](#Things-To-Do)
-* [New Databse](#New-Database)
-* [Old Databse](#Old-Databse)
+* [Database](#Database)
 
 <br>
 
@@ -48,9 +47,9 @@ You can edit or optimize the code, Just follow the Rules
 
 <br>
 
-#### New Databse
+### Database
 
-__New Database Name:__ memesite
+__Database Name:__ memesite
 
 **Query to setup MySQL Database:**
 
@@ -122,32 +121,3 @@ Written_Posts
    * DOWNVOTE        int
 ```
 
-<br>
-
-#### Old Databse
-
-__Old Database Name:__ article_site
-
-__Table/s:__
-
-```
-Registered_Users
-   * FIRST_NAME      varchar(30)
-   * LAST_NAME       varchar(30)
-   * USER_NAME       varchar(30)
-   * EMAIL           varchar(30) (PK)
-   * PASSWORD        text
-   * GENDER          varchar(30
-   * BIRTHDAY        date
-   * ADDRESS         text
-   * PROFILE_PIC     text
-   * BIO             text
-
-Written_Article
-   * HEADLINE        varchar(200) (PK)
-   * CONTENT         text
-   * AUTHOR          varchar(30)
-   * THUMBNAIL       text
-   * CATEGORY        varchar(30)
-   * PUBLISH_DATE    date
-```
