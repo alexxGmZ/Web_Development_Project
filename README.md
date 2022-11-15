@@ -4,19 +4,29 @@ You can edit or optimize the code, Just follow the Rules
 
 ## This is the Web Development Project Repository for Finals
 
-__Contributing Members:__
+### Table of Contents:
+* [Contributing Members](#Contributing-Members)
+* [Dependencies](#Dependencies)
+* [Rules for Maintaining This Project](#Rules-for-Maintaining-This-Project)
+* [Things To Do](#Things-To-Do)
+* [New Databse](#New-Database)
+* [Old Databse](#Old-Databse)
+
+<br>
+
+#### Contributing Members:
 
 * Gomez (alexxShandsome)
 * Arganda (earlylalo)
 * Encabo (orly20)
 
-__Dependencies:__
+#### Dependencies:
 
 * Bootstrap Version 5
 * XAMPP
 * XAMPP for Linux
 
-__Rules for Maintaining This Project__
+#### Rules for Maintaining This Project
 
 * Use TABS for indention for uniformity in all editors that uses TABS, do not convert tabs to spaces.
 * Follow Proper indention formatting.
@@ -25,7 +35,7 @@ __Rules for Maintaining This Project__
 * Every page should have their own separate CSS file.
 * List encountered bugs in the "Known Bug/s" section.
 
-__Things To Do:__
+#### Things To Do:
 
 * Change Color Scheme (Lean more on Pastel or Lighter color)
 * Restructure Database and its Tables to Fit the new Project
@@ -36,9 +46,9 @@ __Things To Do:__
 * Improve Navbar design (```navbar.php``` and ```logged_in_navbar.php```)
 * Create a logged out user page (view ```user_profile.php``` when logged out)
 
-__Known Bug/s:__
+<br>
 
-* Insert known bugs here
+#### New Databse
 
 __New Database Name:__ memesite
 
@@ -81,6 +91,12 @@ CREATE TABLE Written_Posts (
 -- Add more tables
 ```
 
+**Successful Creation of Database should look like this in phpmyadmin**
+
+![image1](./assets/images/database.png)
+![image2](./assets/images/registered_users_table.png)
+![image3](./assets/images/written_post_table.png)
+
 __Table/s:__
 
 ```
@@ -105,6 +121,10 @@ Written_Posts
    * UPVOTE          int
    * DOWNVOTE        int
 ```
+
+<br>
+
+#### Old Databse
 
 __Old Database Name:__ article_site
 
