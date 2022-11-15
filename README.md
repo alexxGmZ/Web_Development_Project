@@ -32,7 +32,7 @@ You can edit or optimize the code, Just follow the Rules
 * Code readability is priority, "It's okay to be buggy as long as readable".
 * Push changes in the ```testing``` branch because ```main``` is for production only, which means it should be stable and has little bugs.
 * Every page should have their own separate CSS file.
-* List encountered bugs in the "Known Bug/s" section.
+* Create an Issue Report in the "[Issues](https://github.com/alexxShandsome/Web_Development_Project/issues)" tab.
 
 #### Things To Do:
 
