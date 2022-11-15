@@ -181,11 +181,11 @@
 			</div>
 			<!--- Birthday --->
 
-			<!--- Address --->
-			<div class="form-floating mb-3">
-			<input type="text" class="form-control" name="home_add" placeholder=" " value="<?php echo $home_add; ?>">
-				<label>Address:</label>
-			</div>
+			<!-- - Address - -->
+			<!-- <div class="form-floating mb-3"> -->
+			<!-- <input type="text" class="form-control" name="home_add" placeholder=" " value="<?php echo $home_add; ?>"> -->
+				<!-- <label>Address:</label> -->
+			<!-- </div> -->
 			<!--- Address --->
 
 			<!-- Upload Profile Picture -->
@@ -248,8 +248,13 @@
 				<?php
 					// Inert New User to Database
 					if(isset($_POST['submit']) && $has_error == 0){
+						// for old database (article_site)
 						registration_insert_user($pdo, $firstname, $lastname, $username, $email, $password, $gender, $birthday, $home_add, $profile_pic, $short_bio);
-						//header("Location: ./login.php");
+
+						// for new database (memesite)
+						// registration_insert_user($pdo, $firstname, $lastname, $username, $email, $password, $gender, $birthday, $profile_pic, $short_bio);
+
+						// after successful submittion go to login page
 						echo '<script type="text/javascript">window.location.href = "login.php";</script>';
 					}
 				?>
