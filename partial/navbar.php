@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 		<!-- Site Page Name / Logo -->
 		<div class="col d-flex justify-content-start ms-3">
-			<a class="teal_text navbar-brand fw-bolder fs-2" href="landing.php">MemeHub</a>
+			<a class="teal_text navbar-brand fw-bolder fs-2" href="landing.php">Site Name Here</a>
 		</div>
 		<!-- End of Site Page Name / Logo -->
 
