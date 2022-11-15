@@ -73,17 +73,16 @@
 	}
 
 	// for memesite database
-	// function insert_new_post($pdo, $user_id, $title, $post_image, $date_posted, $upvote, $downvote){
+	// function insert_new_post($pdo, $user_id, $title, $post_image, $upvote, $downvote){
 	// 	$statement = $pdo->prepare('
 	// 		INSERT INTO `Written_Posts`
-	// 			(`USER_ID`, `TITLE`, `POST_IMAGE`, `DATE_POSTED`, `UPVOTE`, `DOWNVOTE`)
+	// 			(`USER_ID`, `TITLE`, `POST_IMAGE`, `UPVOTE`, `DOWNVOTE`)
 	// 		VALUES
-	// 			(:USER_ID, :TITLE, :POST_IMAGE, :DATE_POSTED, :UPVOTE, :DOWNVOTE)
+	// 			(:USER_ID, :TITLE, :POST_IMAGE, :UPVOTE, :DOWNVOTE)
 	// 	');
 	// 	$statement->bindValue(':USER_ID', $user_id);
 	// 	$statement->bindValue(':TITLE', $title);
 	// 	$statement->bindValue(':POST_IMAGE', $post_image);
-	// 	$statement->bindValue(':DATE_POSTED', $date_posted);
 	// 	$statement->bindValue(':UPVOTE', $upvote);
 	// 	$statement->bindValue(':DOWNVOTE', $downvote);
 	// 	$statement->execute();

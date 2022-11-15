@@ -108,7 +108,7 @@
 
 		<!-- Error Message -->
 		<?php if($has_error == 1): ?>
-			<div class="col-6 mx-auto alert alert-danger pt-3 pb-3" role="alert">
+			<div class="col-6 mx-auto alert alert-danger pt-3 pb-3 shadow" role="alert">
 				<strong class="">Attention!</strong>
 				<p><?php echo $error_msg; ?></p>
 			</div>
@@ -249,7 +249,7 @@
 					// Inert New User to Database
 					if(isset($_POST['submit']) && $has_error == 0){
 						// for old database (article_site)
-						registration_insert_user($pdo, $firstname, $lastname, $username, $email, $password, $gender, $birthday, $home_add, $profile_pic, $short_bio);
+						// registration_insert_user($pdo, $firstname, $lastname, $username, $email, $password, $gender, $birthday, $home_add, $profile_pic, $short_bio);
 
 						// for new database (memesite)
 						// registration_insert_user($pdo, $firstname, $lastname, $username, $email, $password, $gender, $birthday, $profile_pic, $short_bio);

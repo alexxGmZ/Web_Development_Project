@@ -8,27 +8,27 @@
 	if (!isset($_SESSION['is_logged_in']))
 		header("Location: ./landing.php");
 
-	$headline = $_POST['headline'] ?? null;
-	$content = $_POST['content'] ?? null;
-	$category = $_POST['category'] ?? null;
-	$publish_date = $_POST['publish_date'] ?? null;
+	$title = $_POST['title'] ?? null;
+	// $content = $_POST['content'] ?? null;
+	// $category = $_POST['category'] ?? null;
+	// $publish_date = $_POST['publish_date'] ?? null;
 
 	$thumbnail = $_POST['thumbnail'] ?? null;
 	$upload_ok = 1;
 
-	$author_name = $_POST['author_name'] ?? null;
+	// $author_name = $_POST['author_name'] ?? null;
 
 	$has_error = 0;
 	$error_msg = 'Please fill out the required fields.';
 
 
 	if($_SERVER["REQUEST_METHOD"] === "POST") {
-		if(!isset($headline) || strlen(trim($headline)) == 0) $has_error = 1;
-		if(!isset($content) || strlen(trim($content)) == 0) $has_error = 1;
-		// if(!isset($thumbnail) || strlen(trim($thumbnail)) == 0) $has_error = 1;
-		if(!isset($author_name) || strlen(trim($author_name)) == 0) $has_error = 1;
-		if(!isset($category) || strlen(trim($category)) == 0) $has_error = 1;
-		if(!isset($publish_date) || strlen(trim($publish_date)) == 0) $has_error = 1;
+		if(!isset($title) || strlen(trim($title)) == 0) $has_error = 1;
+		// if(!isset($content) || strlen(trim($content)) == 0) $has_error = 1;
+		// // if(!isset($thumbnail) || strlen(trim($thumbnail)) == 0) $has_error = 1;
+		// if(!isset($author_name) || strlen(trim($author_name)) == 0) $has_error = 1;
+		// if(!isset($category) || strlen(trim($category)) == 0) $has_error = 1;
+		// if(!isset($publish_date) || strlen(trim($publish_date)) == 0) $has_error = 1;
 
 //
 //    Thumbnail Upload Validation
@@ -116,111 +116,28 @@
 
 	<div class="new_article_area border shadow-lg mt-3 mb-4 p-3 rounded-3">
 		<form class="m-2" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
-		  <!-- Headline -->
+		  <!-- Title -->
 			<div class="mb-3
 				<?php
-					echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($headline) || strlen(trim($headline)) == 0) ? 'has_error' : '' );
+					echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($title) || strlen(trim($title)) == 0) ? 'has_error' : '' );
 				?>">
-				<label for="headline" class="form-label">Headline</label>
-				<textarea class="form-control text-center fs-3 fw-bold" type="text" id="headline" name="headline"><?php echo $headline; ?></textarea>
+				<label for="title" class="form-label">Title</label>
+				<textarea class="form-control text-center fs-3 fw-bold" type="text" id="title" name="title"><?php echo $title; ?></textarea>
 			</div>
-			<!-- Headline -->
+			<!-- Title -->
 
-			<!-- Content -->
-			<div class="mb-3
-				<?php
-					echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($content) || strlen(trim($content)) == 0) ? 'has_error' : '' );
-				?>">
-				<label for="content" class="form-label">Content</label>
-				<textarea class="form-control content_textarea_height"  id="content" name="content"><?php echo $content; ?></textarea>
-			</div>
-			<!-- Content -->
-
-			<div class="row mb-3">
-				<!-- Author Name -->
-				<div class="col
-					<?php
-						echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($author_name) || strlen(trim($author_name)) == 0) ? 'has_error' : '' );
-					?>">
-					<label for="author_name" class="form-label">Author</label>
-					<input type="text" class="form-control" id="author_name" name="author_name" value="<?php echo $author_name; ?>">
-				</div>
-				<!-- Author Name -->
-
-				<!-- Article Thumbnail Upload and Validation -->
-				<div class="col ">
-					<label for="thumbnail" class="form-label">Article Thumbnail</label>
-					<div class="row ms-2 mb-1
-						<?php
-							echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($thumbnail) || strlen(trim($thumbnail)) == 0) ? 'has_error' : '' );
-						?>" style="margin-right: 2px;">
-
-						<input type="file" class="form-control" id="thumbnail" name="thumbnail" accept="image/*">
-					</div>
-
-					<div class="row">
-						<?php if (isset($_POST['submit']) && $upload_ok == 0): ?>
-							<div class="mx-auto alert alert-danger pt-3 text-center" role="alert">
-								<strong>Image Upload Failed</strong><br>
-								<?php if ($_FILES['thumbnail']['size'] > $upload_file_size): ?>
-									<span>Exceeded 10MB File Size</span>
-								<?php endif; ?>
-
-								<?php if ($image_file_type != 'jpg' && $image_file_type != 'jpeg' && $image_file_type != 'png' && $image_file_type != 'gif'): ?>
-									<span>File Format Not Supported</span>
-								<?php endif; ?>
-							</div>
-
-						<?php elseif (isset($_POST['submit']) && $upload_ok == 1): ?>
-							<div class="mx-auto alert alert-success pt-3 text-center" role="alert">
-								<strong>Image Successfully Uploaded</strong><br>
-							</div>
-						<?php endif; ?>
-					</div>
-				</div>
-				<!-- Article Thumbnail Upload and Validation -->
-			</div>
-
-			<div class="row mb-3">
-				<!-- Category -->
-				<div class="col
-					<?php
-						echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($category) || strlen(trim($category)) == 0) ? 'has_error' : '' );
-					?>">
-					<label for="category" class="form-label">Category</label>
-					<select class="form-select" id="category" name="category">
-						<option selected><?php echo $category; ?></option>
-						<option>Science</option>
-						<option>Technology</option>
-						<option>Sports</option>
-						<option>Medicine</option>
-						<option>Real Estate</option>
-						<option>Stock Market</option>
-						<option>Gaming</option>
-						<option>Military</option>
-						<option>Economy</option>
-					</select>
-				</div>
-				<!-- Category -->
-
-				<!-- Publishing Date -->
-				<div class="col
-					<?php
-						echo ( $_SERVER['REQUEST_METHOD'] === 'POST' && ( !isset($publish_date) || strlen(trim($publish_date)) == 0) ? 'has_error' : '' );
-					?>">
-					<label for="publish_date" class="form-label">Publish Date</label>
-					<input type="date" class="form-control" id="publish_date" name="publish_date" value="<?php echo $publish_date; ?>">
-				</div>
-				<!-- Publishing Date -->
-			</div>
+			<p class="text-center">Image Upload Section Here</p>
 
 			<!-- Publish Button -->
 			<div class="text-center mb-1">
 				<button name="submit" type="submit" class="btn btn-success rounded-pill">Post Meme</button>
 				<?php
 					if(isset($_POST['submit']) && $has_error == 0){
-						insert_new_article($pdo, $headline, $content, $category, $publish_date, $thumbnail, $author_name);
-						//header("Location: ./landing.php");
+						// for old database (article_site)
+						// insert_new_article($pdo, $headline, $content, $category, $publish_date, $thumbnail, $author_name);
+
+						// for new database (memesite)
+						// function insert_new_post($pdo, $user_id, $title, $post_image, $upvote, $downvote){
 						echo ' <script type="text/javascript">window.location.href = "./landing.php";</script>';
 					}
 				?>
