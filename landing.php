@@ -47,69 +47,73 @@
 				// Heredoc strings are whitespace sensitive
 				if ($index == 0){
 					echo <<< HOTTEST_ARTICLE
-						<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
-	
-							<h1 class="text-center mb-4">Hottest Topic</h1>
+						<div class="mx-auto shadow p-3 mb-5 bg-body rounded w-75 p-3">
+							<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
 
-							<div class="col-lg-2"></div>
-							<div class="col-lg-8">
-								<img class="mb-3 image" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
+								<h1 class="text-center mb-4">Hottest Topic</h1>
+
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<img class="mb-3 image" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
+								</div>
+								<div class="col-lg-2"></div>
+
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<h2 class="text-center">
+										{$articles[$index]["HEADLINE"]}
+									</h2>
+
+									<h4 class="text-center">
+										By: {$articles[$index]["AUTHOR"]}
+									</h4>
+									<p class="text-center">
+										<strong>
+											{$articles[$index]["PUBLISH_DATE"]}
+										</strong>
+									</p>
+									<p class="ps-4 pe-4 content">
+										{$articles[$index]["CONTENT"]}
+									</p>
+								</div>
+								<div class="col-lg-2"></div>
 							</div>
-							<div class="col-lg-2"></div>
-
-							<div class="col-lg-2"></div>
-							<div class="col-lg-8">
-								<h2 class="text-center">
-									{$articles[$index]["HEADLINE"]}
-								</h2>
-
-								<h4 class="text-center">
-									By: {$articles[$index]["AUTHOR"]}
-								</h4>
-								<p class="text-center">
-									<strong>
-										{$articles[$index]["PUBLISH_DATE"]}
-									</strong>
-								</p>
-								<p class="ps-4 pe-4 content">
-									{$articles[$index]["CONTENT"]}
-								</p>
-							</div>
-							<div class="col-lg-2"></div>
 						</div>
 					HOTTEST_ARTICLE;
 				}
 				else{
 					echo <<< SUB_ARTICLES
-						<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
+						<div class="mx-auto shadow p-3 mb-5 bg-body rounded w-75 p-3">
+							<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
 
-							<div class="col-lg-2"></div>
-							<div class="col-lg-8">
-								<img class="mb-3 image" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<img class="mb-3 image" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
+								</div>
+								<div class="col-lg-2"></div>
+
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+									<h2 class="text-center">
+										{$articles[$index]["HEADLINE"]}
+									</h2>
+
+									<h4 class="text-center">
+										By: {$articles[$index]["AUTHOR"]}
+									</h4>
+
+									<p class="text-center">
+										<strong>
+											{$articles[$index]["PUBLISH_DATE"]}
+										</strong>
+									</p>
+
+									<p class="ps-4 pe-4">
+										{$articles[$index]["CONTENT"]}
+									</p>
+								</div>
+								<div class="col-lg-2"></div>
 							</div>
-							<div class="col-lg-2"></div>
-
-							<div class="col-lg-2"></div>
-							<div class="col-lg-8">
-								<h2 class="text-center">
-									{$articles[$index]["HEADLINE"]}
-								</h2>
-
-								<h4 class="text-center">
-									By: {$articles[$index]["AUTHOR"]}
-								</h4>
-
-								<p class="text-center">
-									<strong>
-										{$articles[$index]["PUBLISH_DATE"]}
-									</strong>
-								</p>
-
-								<p class="ps-4 pe-4">
-									{$articles[$index]["CONTENT"]}
-								</p>
-							</div>
-							<div class="col-lg-2"></div>
 						</div>
 					SUB_ARTICLES;
 				}
