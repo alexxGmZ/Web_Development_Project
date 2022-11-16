@@ -3,3 +3,36 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/* Profile-picture */
+img.profile-picture {
+	height: inherit;
+	width: inherit;
+	object-fit: scale-down;
+	border-radius: inherit;
+}
+/* -- end Profile-picture -- */
+
+/* -- Profiler name -- */
+p.name {
+	font-size: 33px;
+	letter-spacing: 1.5px;
+	font-weight: 600;
+	padding: 10px;
+}
+span.username {
+	font-size: 19px;
+	font-weight: normal;
+	letter-spacing: normal;
+}
+/* -- end Profiler name -- */
+
+/* -- bio-container -- */
+div.bio-container {
+	width: 50%;
+}
+p.bio {
+	padding: 7px;
+	letter-spacing: 1.5px;
+}
+/* -- end bio-container -- */
