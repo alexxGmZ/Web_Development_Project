@@ -1,7 +1,7 @@
 # Web Development Project
 
 <p align="center">
-	<img src="./assets/images/logo 1.png">
+	<img src="./assets/images/logo 1 white.jpg">
 </p>
 
 You can edit or optimize the code, Just follow the Rules
