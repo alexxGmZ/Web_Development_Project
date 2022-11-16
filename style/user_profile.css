@@ -43,3 +43,72 @@ p.bio {
 	letter-spacing: 1.5px;
 }
 /* -- end bio-container -- */
+
+/* ------------------------------------------ */
+/* For Collapasible buttons */
+#Container .button-container {
+	padding: 20px;
+}
+	/* post button */
+		#Container .posts-button {
+			background-color: rgb(221, 180, 180);
+			border: none;
+			border-radius: 10px;
+			margin: 0 3px 0 0;
+		}
+		#Container .posts-button:hover {
+			background-color: rgb(189, 179, 179);
+			border: none;
+		}
+		#Container .posts-button:active {
+			background-color: white;
+			border: none;
+			color: black;
+		}
+		#Container .posts-button:focus {
+			background-color: rgb(180, 174, 174);
+			color: black;
+			box-shadow: none;
+		}
+	/* end of post button */
+
+	/* about button */
+		#Container .about-button {
+			background-color: rgb(221, 180, 180);
+			border: none;
+			border-radius: 10px;
+			margin: 0 0 0 3px;
+		}
+		#Container .about-button:hover {
+			background-color: rgb(189, 179, 179);
+			border: none;
+		}
+		#Container .about-button:active {
+			background-color: white;
+			border: none;
+			color: black;
+		}
+		#Container .about-button:focus {
+			background-color: rgb(125, 121, 121);
+			box-shadow: none;
+			color: black;
+		}
+	/* end of about button */
+/* End For Collapasible buttons */
+
+/* For Container of Posts and About Page */
+
+#Container {
+	margin: 50px 0 0 0;
+}
+#Container #Posts {
+	margin-top: 0;
+	background-color: rgb(180, 174, 174);
+}
+
+#Container #About {
+	margin-top: 0;
+	background-color: rgb(125, 121, 121);
+}
+/* End For Container */
+/* ------------------ */
