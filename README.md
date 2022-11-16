@@ -1,8 +1,16 @@
 # Web Development Project
 
+<p align="center">
+	<img src="./assets/images/logo 1.png">
+</p>
+
 You can edit or optimize the code, Just follow the Rules
 
 ## This is the Web Development Project Repository for Finals
+
+<p align="center">
+	<img src="./assets/images/logo 2.png">
+</p>
 
 ### Table of Contents:
 * [Contributing Members](#Contributing-Members)
