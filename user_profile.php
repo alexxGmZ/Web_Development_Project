@@ -38,6 +38,7 @@
 	</div> -->
 	
 	<div class="profile_area border shadow-lg rounded-3 p-3">
+		<!-- Upper Area Profile Picture, Profile Name, Username, and Bio -->
 		<center>
 			<!-- profile picture -->
 			<div class="picture-container">
@@ -64,7 +65,45 @@
 			</div>
 
 		</center>
+		<!-- End of Upper Area Profile Picture, Profile Name, Username, and Bio -->
+		
+		<!-- Collapsible Area -->
+		<div class="accordion accordion-flush" id="Container">
+
+			<!-- Buttons for collapsible area -->
+			<div class="button-container">
+				<center>
+					<button class="btn posts-button" type="button" data-bs-toggle="collapse" data-bs-target="#Posts">
+						<b>Posts</b>
+					</button>
+					<button class="btn about-button" type="button" data-bs-toggle="collapse" data-bs-target="#About">
+						<b>About</b>
+					</button>
+				</center>
+			</div>
+			<!-- Buttons for collapsible area -->
+
+			<!-- About -->
+			<div id="About" class="collapse" data-bs-parent="#Container">
+				<div class="accordion-body">
+					About Here..
+				</div>
+			</div>
+			<!-- End of About -->
+
+			<!-- Posts -->
+			<div id="Posts" class="collapse" data-bs-parent="#Container">
+				<div class="accordion-body">
+					Posts Here...
+				</div>
+			</div>
+			<!-- End of Posts -->
+
+		</div> 
+		<!-- End of Collapsible Area -->
 	</div>
+	
+	
 	
 	<!--<div class="profile_area border shadow-lg rounded-3 p-3">
 		<?php
