@@ -36,7 +36,7 @@
 	<!-- <div class="text-center">
 		<h1 class="text-dark fw-bold p-3">Your Profile</h1>
 	</div> -->
-	
+
 	<div class="profile_area border shadow-lg rounded-3 p-3">
 		<!-- Upper Area Profile Picture, Profile Name, Username, and Bio -->
 		<center>
@@ -58,15 +58,15 @@
 			<!-- user's bio -->
 			<div class="bio-container">
 				<p class="bio">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, 
-					doloribus sed hic ipsum consectetur asperiores commodi. Officia autem eligendi, 
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
+					doloribus sed hic ipsum consectetur asperiores commodi. Officia autem eligendi,
 					beatae, a qui odit iste voluptas atque at alias voluptatem omnis?
 				</p>
 			</div>
 
 		</center>
 		<!-- End of Upper Area Profile Picture, Profile Name, Username, and Bio -->
-		
+
 		<!-- Collapsible Area -->
 		<div class="accordion accordion-flush" id="Container">
 
@@ -99,12 +99,12 @@
 			</div>
 			<!-- End of Posts -->
 
-		</div> 
+		</div>
 		<!-- End of Collapsible Area -->
 	</div>
-	
-	
-	
+
+
+
 	<!--<div class="profile_area border shadow-lg rounded-3 p-3">
 		<?php
 			echo '<pre>';
