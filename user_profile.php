@@ -33,9 +33,6 @@
 		// var_dump($_SESSION['user_info']);
 		// echo '</pre>';
 	?>
-	<!-- <div class="text-center">
-		<h1 class="text-dark fw-bold p-3">Your Profile</h1>
-	</div> -->
 
 	<div class="profile_area border shadow-lg rounded-3 p-3">
 		<!-- Upper Area Profile Picture, Profile Name, Username, and Bio -->
@@ -103,14 +100,8 @@
 		<!-- End of Collapsible Area -->
 	</div>
 
-
-
-	<!--<div class="profile_area border shadow-lg rounded-3 p-3">
-		<?php
-			echo '<pre>';
-			var_dump($_SESSION['user_info']);
-			echo '</pre>';
-		?>
-	</div> -->
+	<!-- Footer -->
+	<?php require_once './partial/footer.php'; ?>
+	<!-- Footer -->
 </body>
 </html>
