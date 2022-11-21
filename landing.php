@@ -2,12 +2,20 @@
 	// database connection
 	require_once './partial/database_connection.php';
 
-	// Only 10 Articles can be outputted in the landing page
+	// old database (article_site)
+	// $statement = $pdo->prepare('
+	// 	SELECT * FROM `Written_Article`
+	// 	ORDER BY `Written_Article`.`PUBLISH_DATE` DESC
+	// 	LIMIT 10
+	// ');
+
+	// new database (memesite)
 	$statement = $pdo->prepare('
-		SELECT * FROM `Written_Article`
-		ORDER BY `Written_Article`.`PUBLISH_DATE` DESC
+		SELECT * FROM `Written_Posts`
+		ORDER BY `Written_Posts`.`DATE_POSTED` DESC
 		LIMIT 10
 	');
+
 	$statement->execute();
 	// $row_limit = $statement->rowCount();
 	$row_limit = 2;

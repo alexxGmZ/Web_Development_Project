@@ -252,7 +252,7 @@
 						// registration_insert_user($pdo, $firstname, $lastname, $username, $email, $password, $gender, $birthday, $home_add, $profile_pic, $short_bio);
 
 						// for new database (memesite)
-						// registration_insert_user($pdo, $firstname, $lastname, $username, $email, $password, $gender, $birthday, $profile_pic, $short_bio);
+						registration_insert_user($pdo, $firstname, $lastname, $username, $email, $password, $gender, $birthday, $profile_pic, $short_bio);
 
 						// after successful submittion go to login page
 						echo '<script type="text/javascript">window.location.href = "login.php";</script>';

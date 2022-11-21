@@ -98,6 +98,12 @@
 
 		</div>
 		<!-- End of Collapsible Area -->
+
+	<?php
+		echo '<pre>';
+		var_dump($_SESSION['user_info']);
+		echo '</pre>';
+	?>
 	</div>
 
 	<!-- Footer -->
