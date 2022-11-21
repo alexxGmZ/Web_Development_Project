@@ -4,8 +4,12 @@
 	//var_dump($_SESSION);
 	//echo '</pre>';
 
-	// database connection
+	// database connection (old database connection)
 	$pdo = new PDO('mysql:host=localhost;port=3306;dbname=article_site', 'root', '');
+
+	// new database connection for memesite
+	// $pdo = new PDO('mysql:host=localhost;port=3306;dbname=memesite', 'root', '');
+
 	// set error
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -30,6 +34,27 @@
 		$statement->execute();
 	}
 
+	// for memesite database
+	// function registration_insert_user($pdo, $firstname, $lastname, $username, $email, $password, $gender, $birthday, $profile_pic, $bio){
+	// 	$statement = $pdo->prepare('
+	// 		INSERT INTO `Registered_Users`
+	// 			(`FIRST_NAME`, `LAST_NAME`, `USER_NAME`, `EMAIL`, `PASSWORD`, `GENDER`, `BIRTHDAY`, `PROFILE_PIC`, `BIO`)
+	// 		VALUES
+	// 			(:FIRST_NAME, :LAST_NAME, :USER_NAME, :EMAIL, :PASSWORD, :GENDER, :BIRTHDAY, :PROFILE_PIC, :BIO)
+	// 	');
+	//
+	// 	$statement->bindValue(':FIRST_NAME', $firstname);
+	// 	$statement->bindValue(':LAST_NAME', $lastname);
+	// 	$statement->bindValue(':USER_NAME', $username);
+	// 	$statement->bindValue(':EMAIL', $email);
+	// 	$statement->bindValue(':PASSWORD', $password);
+	// 	$statement->bindValue(':GENDER', $gender);
+	// 	$statement->bindValue(':BIRTHDAY', $birthday);
+	// 	$statement->bindValue(':PROFILE_PIC', $profile_pic);
+	// 	$statement->bindValue(':BIO', $bio);
+	// 	$statement->execute();
+	// }
+
 	function insert_new_article($pdo, $headline, $content, $category, $publish_date, $thumbnail, $author_name){
 		$statement = $pdo->prepare('
 			INSERT INTO `Written_Article`
@@ -46,6 +71,22 @@
 		$statement->bindValue(':PUBLISH_DATE', $publish_date);
 		$statement->execute();
 	}
+
+	// for memesite database
+	// function insert_new_post($pdo, $user_id, $title, $post_image, $upvote, $downvote){
+	// 	$statement = $pdo->prepare('
+	// 		INSERT INTO `Written_Posts`
+	// 			(`USER_ID`, `TITLE`, `POST_IMAGE`, `UPVOTE`, `DOWNVOTE`)
+	// 		VALUES
+	// 			(:USER_ID, :TITLE, :POST_IMAGE, :UPVOTE, :DOWNVOTE)
+	// 	');
+	// 	$statement->bindValue(':USER_ID', $user_id);
+	// 	$statement->bindValue(':TITLE', $title);
+	// 	$statement->bindValue(':POST_IMAGE', $post_image);
+	// 	$statement->bindValue(':UPVOTE', $upvote);
+	// 	$statement->bindValue(':DOWNVOTE', $downvote);
+	// 	$statement->execute();
+	// }
 
 	function get_user_login($email,$password,$pdo){
 

@@ -1,45 +1,63 @@
 # Web Development Project
 
+<p align="center">
+	<img src="./assets/images/logo 1 white.jpg">
+</p>
+
 You can edit or optimize the code, Just follow the Rules
 
 ## This is the Web Development Project Repository for Finals
 
-__Contributing Members:__
+<p align="center">
+	<img src="./assets/images/logo 2.png">
+</p>
+
+### Table of Contents:
+* [Contributing Members](#Contributing-Members)
+* [Dependencies](#Dependencies)
+* [Rules for Maintaining This Project](#Rules-for-Maintaining-This-Project)
+* [Things To Do](#Things-To-Do)
+* [Database](#Database)
+
+<br>
+
+#### Contributing Members:
 
 * Gomez (alexxShandsome)
 * Arganda (earlylalo)
 * Encabo (orly20)
 
-__Dependencies:__
+#### Dependencies:
 
 * Bootstrap Version 5
 * XAMPP
 * XAMPP for Linux
 
-__Rules for Maintaining This Project__
+#### Rules for Maintaining This Project
 
 * Use TABS for indention for uniformity in all editors that uses TABS, do not convert tabs to spaces.
 * Follow Proper indention formatting.
 * Code readability is priority, "It's okay to be buggy as long as readable".
 * Push changes in the ```testing``` branch because ```main``` is for production only, which means it should be stable and has little bugs.
 * Every page should have their own separate CSS file.
-* List encountered bugs in the "Known Bug/s" section.
+* Create an Issue Report in the "[Issues](https://github.com/alexxShandsome/Web_Development_Project/issues)" tab.
 
-__Things To Do:__
+#### Things To Do:
 
 * Change Color Scheme (Lean more on Pastel or Lighter color)
 * Restructure Database and its Tables to Fit the new Project
 * Redesign Landing Page (```landing.php```)
 * Redesign Registration Page (```registration.php```)
 * Redesign Login Page (```login.php```)
-* Redesign and Rename New Article page to New Post (```new_article.php``` to ```new_post.php```)
+* Redesign New Post Page (```new_post.php```)
 * Improve Navbar design (```navbar.php``` and ```logged_in_navbar.php```)
+* Create a logged out user page (view ```user_profile.php``` when logged out)
 
-__Known Bug/s:__
+<br>
 
-* Insert known bugs here
+### Database
 
-__New Database Name:__ memesite
+__Database Name:__ memesite
 
 **Query to setup MySQL Database:**
 
@@ -53,13 +71,13 @@ CREATE TABLE Registered_Users (
    FIRST_NAME VARCHAR(50) NOT NULL,
    LAST_NAME VARCHAR(50) NOT NULL,
    USER_NAME VARCHAR(50) NOT NULL,
-   EMAIL TEXT NOT NULL,   
+   EMAIL TEXT NOT NULL,
    PASSWORD TEXT NOT NULL,
    GENDER VARCHAR(20) NOT NULL,
    BIRTHDAY DATE NOT NULL,
    PROFILE_PIC TEXT NOT NULL,
    BIO TEXT NOT NULL,
-   PRIMARY KEY (USER_ID)  
+   PRIMARY KEY (USER_ID)
 );
 
 CREATE TABLE Written_Posts (
@@ -79,6 +97,12 @@ CREATE TABLE Written_Posts (
 
 -- Add more tables
 ```
+
+**Successful Creation of Database should look like this in phpmyadmin**
+
+![image1](./assets/images/database.png)
+![image2](./assets/images/registered_users_table.png)
+![image3](./assets/images/written_post_table.png)
 
 __Table/s:__
 
@@ -105,28 +129,3 @@ Written_Posts
    * DOWNVOTE        int
 ```
 
-__Old Database Name:__ article_site
-
-__Table/s:__
-
-```
-Registered_Users
-   * FIRST_NAME      varchar(30)
-   * LAST_NAME       varchar(30)
-   * USER_NAME       varchar(30)
-   * EMAIL           varchar(30) (PK)
-   * PASSWORD        text
-   * GENDER          varchar(30
-   * BIRTHDAY        date
-   * ADDRESS         text
-   * PROFILE_PIC     text
-   * BIO             text
-
-Written_Article
-   * HEADLINE        varchar(200) (PK)
-   * CONTENT         text
-   * AUTHOR          varchar(30)
-   * THUMBNAIL       text
-   * CATEGORY        varchar(30)
-   * PUBLISH_DATE    date
-```

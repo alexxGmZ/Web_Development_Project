@@ -4,12 +4,13 @@
 
 	// Only 10 Articles can be outputted in the landing page
 	$statement = $pdo->prepare('
-		SELECT * FROM `Written_Article` 
-		ORDER BY `Written_Article`.`PUBLISH_DATE` DESC 
+		SELECT * FROM `Written_Article`
+		ORDER BY `Written_Article`.`PUBLISH_DATE` DESC
 		LIMIT 10
 	');
 	$statement->execute();
-	$row_limit = $statement->rowCount();
+	// $row_limit = $statement->rowCount();
+	$row_limit = 2;
 	$articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -22,13 +23,13 @@
 
 	<?php
 		require_once './style/bootstrap.html';
-		require_once './style/ubuntu_regular_font.html';	
+		require_once './style/ubuntu_regular_font.html';
 	?>
 </head>
 
-<body class="teal">
+<body class="">
 	<!-- Navigation Bar -->
-	<?php 
+	<?php
 		//require_once './partial/navbar.php';
 		//require './partial/logged_in_navbar.php';
 
@@ -46,72 +47,32 @@
 				// Make use don't convert spaces to tabs or the opposite, or it will parse error
 				// Heredoc strings are whitespace sensitive
 				if ($index == 0){
-					echo <<< HOTTEST_ARTICLE
-						<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
-	
-							<h1 class="text-center mb-4">Hottest Topic</h1>
+					echo <<< FUNNIEST_MEME
+						<div class="row rounded-2 border shadow mb-3 pt-3 pb-3">
 
-							<div class="col-lg-2"></div>
-							<div class="col-lg-8">
-								<img class="mb-3 image" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
-							</div>
-							<div class="col-lg-2"></div>
+							<h1 class="text-center mb-4">Funniest Meme of the Day</h1>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
 
-							<div class="col-lg-2"></div>
-							<div class="col-lg-8">
-								<h2 class="text-center">
-									{$articles[$index]["HEADLINE"]}
-								</h2>
-
-								<h4 class="text-center">
-									By: {$articles[$index]["AUTHOR"]}
-								</h4>
-								<p class="text-center">
-									<strong>
-										{$articles[$index]["PUBLISH_DATE"]}
-									</strong>
-								</p>
-								<p class="ps-4 pe-4 content">
-									{$articles[$index]["CONTENT"]}
-								</p>
-							</div>
-							<div class="col-lg-2"></div>
 						</div>
-					HOTTEST_ARTICLE;
+					FUNNIEST_MEME;
 				}
 				else{
-					echo <<< SUB_ARTICLES
-						<div class="row rounded-2 bg-light mb-2 pt-3 pb-3">
+					echo <<< SUB_MEMES
+						<div class="row rounded-2 border shadow-lg mb-2 pt-3 pb-3">
 
-							<div class="col-lg-2"></div>
-							<div class="col-lg-8">
-								<img class="mb-3 image" src="./uploaded_files/article_thumbnails/{$articles[$index]["THUMBNAIL"]}">
-							</div>
-							<div class="col-lg-2"></div>
+							<h3 class="text-center mb-4">Meh Meme of the Day</h3>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
 
-							<div class="col-lg-2"></div>
-							<div class="col-lg-8">
-								<h2 class="text-center">
-									{$articles[$index]["HEADLINE"]}
-								</h2>
-
-								<h4 class="text-center">
-									By: {$articles[$index]["AUTHOR"]}
-								</h4>
-
-								<p class="text-center">
-									<strong>
-										{$articles[$index]["PUBLISH_DATE"]}
-									</strong>
-								</p>
-
-								<p class="ps-4 pe-4">
-									{$articles[$index]["CONTENT"]}
-								</p>
-							</div>
-							<div class="col-lg-2"></div>
 						</div>
-					SUB_ARTICLES;
+					SUB_MEMES;
 				}
 			}
 		?>

@@ -41,9 +41,9 @@
 		require_once './style/ubuntu_regular_font.html';
 	?>
 </head>
-<body class="teal">
+<body class="">
 	<div class="text-center mb-3">
-		<h1 class="text-white p-4">Log-In</h1>
+		<h1 class="p-4 fw-bold">Log-In</h1>
 
 		<!-- Error Message -->
 		<?php if (isset($_GET['error'])): ?>
@@ -56,7 +56,7 @@
 	</div>
 
 
-	<div class="bg-light login_area rounded-3 p-3">
+	<div class="border shadow login_area rounded-3 p-3">
 		<form class="m-2" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 			<!-- Email Input -->
 			<div class="form-floating mb-3">

@@ -14,12 +14,12 @@ body{
 	color: red;
 }
 
-.has_error{ 
-	color: #842029; 
-} 
+.has_error{
+	color: #842029;
+}
 
-.has_error textarea, .has_error input, .has_error select{ 
-	color: #842029; 
-	border-color: #842029; 
-	background-color: #f8d7da; 
-} 
+.has_error textarea, .has_error input, .has_error select{
+	color: #842029;
+	border-color: #842029;
+	background-color: #f8d7da;
+}

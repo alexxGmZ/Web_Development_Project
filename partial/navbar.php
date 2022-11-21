@@ -1,13 +1,13 @@
 <!-- Navigation Bar -->
-<nav class="navbar sticky-top bg-opacity-75 bg-light">
+<nav class="border-bottom navbar sticky-top bg-light">
 	<div class="container-fluid">
 		<!-- Site Page Name / Logo -->
-		<div class="col d-flex justify-content-start ms-3">
+		<div class="col-auto d-flex justify-content-start ms-3">
 			<a class="teal_text navbar-brand fw-bolder fs-2" href="landing.php">Site Name Here</a>
 		</div>
 		<!-- End of Site Page Name / Logo -->
 
-		<div class="col-auto d-inline-flex justify-content-end">
+		<div class="col-auto d-inline-flex justify-content-center">
 			<!-- Search Bar and Icon Button -->
 			<form class="d-flex" action="https://google.com/search" target="_blank" type="GET">
 				<input class="form-control ms-2 me-2" type="search" placeholder="Search" aria-label="Search">
@@ -18,7 +18,9 @@
 				</button>
 			</form>
 			<!-- End of Search Bar and Icon Button -->
+		</div>
 
+		<div class="col-auto d-inline-flex justify-content-end">
 			<a class="btn btn-outline-primary me-2 rounded-pill" href="login.php">Log-in</a>
 			<a class="btn btn-primary rounded-pill me-3" href="registration.php">Sign-up</a>
 		</div>
