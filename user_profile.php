@@ -33,21 +33,41 @@
 		// var_dump($_SESSION['user_info']);
 		// echo '</pre>';
 	?>
+	<?php
+	//Access the Specific Data from the Array
+		//Assign the 'user_info' to variable $User to easily access its data individually
+		$User = $_SESSION['user_info'];
+		
+		$profile_pic = $User["PROFILE_PIC"];
+		// echo $User["USER_ID"];
+		// echo $User["FIRST_NAME"];
+		// echo $User["LAST_NAME"];
+		// echo $User["USER_NAME"];
+		// echo $User["EMAIL"];
+		// echo $User["PASSWORD"];
+		// echo $User["GENDER"];
+		// echo $User["BIRTHDAY"];
+		// echo $User["BIO"];
+	?>
 
 	<div class="profile_area border shadow-lg rounded-3 p-3">
 		<!-- Upper Area Profile Picture, Profile Name, Username, and Bio -->
 		<center>
 			<!-- profile picture -->
 			<div class="picture-container">
-				<img class="profile-picture" src="https://seedpsychology.com.au/wp-content/uploads/2018/09/Damian-profile-pic-square.jpg" alt="User_image">
+				<img class="profile-picture" src="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" alt="User_image">
 			</div>
 
 			<!-- name and user-name -->
 			<div class="name-container">
 				<p class="name">
-					Profile Name
+						<?php 
+							echo $User["FIRST_NAME"]." ".$User["LAST_NAME"];
+						?>
 					<span class="username">
-						(User Name)
+						<?php
+							echo "( ".$User["USER_NAME"]." )";
+						?>
 					</span>
 				</p>
 			</div>
@@ -55,9 +75,9 @@
 			<!-- user's bio -->
 			<div class="bio-container">
 				<p class="bio">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
-					doloribus sed hic ipsum consectetur asperiores commodi. Officia autem eligendi,
-					beatae, a qui odit iste voluptas atque at alias voluptatem omnis?
+					<?php
+						echo $User["BIO"];
+					?>
 				</p>
 			</div>
 
@@ -100,9 +120,10 @@
 		<!-- End of Collapsible Area -->
 
 	<?php
-		echo '<pre>';
-		var_dump($_SESSION['user_info']);
-		echo '</pre>';
+		// echo '<pre>';
+		// $User = $_SESSION['user_info'];
+		// var_dump($User);
+		// echo '</pre>';
 	?>
 	</div>
 
