@@ -37,7 +37,7 @@
 	//Access the Specific Data from the Array
 		//Assign the 'user_info' to variable $User to easily access its data individually
 		$User = $_SESSION['user_info'];
-		
+
 		$profile_pic = $User["PROFILE_PIC"];
 		// echo $User["USER_ID"];
 		// echo $User["FIRST_NAME"];
@@ -55,13 +55,13 @@
 		<center>
 			<!-- profile picture -->
 			<div class="picture-container">
-				<img class="profile-picture" src="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" alt="User_image">
+				<img class="profile-picture border border-2" src="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" alt="User_image">
 			</div>
 
 			<!-- name and user-name -->
 			<div class="name-container">
 				<p class="name">
-						<?php 
+						<?php
 							echo $User["FIRST_NAME"]." ".$User["LAST_NAME"];
 						?>
 					<span class="username">
