@@ -43,7 +43,10 @@
 </head>
 <body class="">
 	<div class="text-center mb-3">
-		<h1 class="p-4 fw-bold">Log-In</h1>
+		<a href="./landing.php">
+			<img class="logo mt-4" src="./assets/images/logo 1 trimmed.png">
+		</a>
+		<h1 class="p-3 fw-bold">Log-In</h1>
 
 		<!-- Error Message -->
 		<?php if (isset($_GET['error'])): ?>
