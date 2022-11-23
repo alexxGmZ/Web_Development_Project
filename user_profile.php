@@ -55,7 +55,9 @@
 		<center>
 			<!-- profile picture -->
 			<div class="picture-container">
-				<img class="profile-picture border border-2" src="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" alt="User_image">
+				<a class="profile-picture" href="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" target="_self">
+					<img class="profile-picture border border-2" src="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" alt="User_image">
+				</a>
 			</div>
 
 			<!-- name and user-name -->
