@@ -95,6 +95,27 @@ p.bio {
 			color: black;
 		}
 	/* end of about button */
+
+	/* About Container */
+		#Container .about-container {
+			height: auto;
+			width: 95%;
+			margin: 0 auto;
+		}
+		#Container .about-container .about-info {
+			margin: 0;
+			padding: 10px;	
+		}
+		#Container .about-container .about-info span {
+			font-size: 1.5em;
+			font-weight: 600;
+		}
+		#Container .About {
+			width: min-content;
+			border-bottom: 3px solid;
+		}
+	/* End About Container */
+
 /* End For Collapasible buttons */
 
 /* For Container of Posts and About Page */
