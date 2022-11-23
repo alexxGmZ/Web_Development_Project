@@ -105,7 +105,31 @@
 			<!-- About -->
 			<div id="About" class="collapse" data-bs-parent="#Container">
 				<div class="accordion-body">
-					About Here..
+					<h2 class="About">About</h2>
+						<div class="about-container">
+							
+							<!-- User Gender -->
+							<div class="about-info">
+									<div><span><?php echo $User["GENDER"]; ?></span></div>
+									<div>Gender</div>
+								</div>
+							<!-- End User Gender -->
+
+							<!-- User Contact -->
+							<div class="about-info">
+									<div><span><?php echo $User["EMAIL"]; ?></span></div>
+									<div>Contact</div>
+								</div>
+							<!-- End User Contact -->
+							
+							<!-- User Birthday -->
+								<div class="about-info">
+									<div><span><?php echo $User["BIRTHDAY"]; ?></span></div>
+									<div>Birthday</div>
+								</div>
+							<!-- End User Birthday -->
+
+						</div>
 				</div>
 			</div>
 			<!-- End of About -->
