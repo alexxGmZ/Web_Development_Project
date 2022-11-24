@@ -92,6 +92,7 @@
 
 	<!-- Bootstrap core CSS and JS -->
 	<?php
+		require_once './partial/favicon.html';
 		require_once './style/bootstrap.html';
 		require_once './style/ubuntu_regular_font.html';
 	?>

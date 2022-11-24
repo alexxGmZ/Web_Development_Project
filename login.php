@@ -37,6 +37,7 @@
 	<link href="./style/login_css.css" rel="stylesheet" type="text/css">
 
 	<?php
+		require_once './partial/favicon.html';
 		require_once './style/bootstrap.html';
 		require_once './style/ubuntu_regular_font.html';
 	?>

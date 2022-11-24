@@ -13,6 +13,7 @@
 	<link href="./style/user_profile.css" rel="stylesheet" type="text/css">
 
 	<?php
+		require_once './partial/favicon.html';
 		require_once './style/bootstrap.html';
 		require_once './style/ubuntu_regular_font.html';
 	?>
@@ -107,7 +108,7 @@
 				<div class="accordion-body">
 					<h2 class="About">About</h2>
 						<div class="about-container">
-							
+
 							<!-- User Gender -->
 							<div class="about-info">
 									<div><span><?php echo $User["GENDER"]; ?></span></div>
@@ -121,7 +122,7 @@
 									<div>Contact</div>
 								</div>
 							<!-- End User Contact -->
-							
+
 							<!-- User Birthday -->
 								<div class="about-info">
 									<div><span><?php echo $User["BIRTHDAY"]; ?></span></div>
