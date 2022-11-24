@@ -3,7 +3,9 @@
 	<div class="container-fluid">
 		<!-- Site Page Name / Logo -->
 		<div class="col-auto d-flex justify-content-start ms-3">
-			<a class="teal_text navbar-brand fw-bolder fs-2" href="landing.php">Site Name Here</a>
+			<a class="teal_text navbar-brand fw-bolder fs-2" href="landing.php">
+				<img class="" src="./assets/images/navbar logo 1 trimmed.png">
+			</a>
 		</div>
 		<!-- End of Site Page Name / Logo -->
 
