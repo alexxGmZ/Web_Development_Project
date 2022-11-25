@@ -53,7 +53,7 @@ p.bio {
 	max-width: 830px;
 	margin: 30px auto;
 	padding: 10px;
-	
+	justify-content: space-between;
 }
 
 /* to remove the radio input button */
@@ -70,6 +70,7 @@ p.bio {
 	cursor: pointer;
 	border-radius: 8px 8px 0 0;
 	transition: background-color .3s;
+	width: 49.5%;
 }
 
 /* the container for all the content */
