@@ -13,6 +13,7 @@
 	<link href="./style/user_profile.css" rel="stylesheet" type="text/css">
 
 	<?php
+		require_once './partial/favicon.html';
 		require_once './style/bootstrap.html';
 		require_once './style/ubuntu_regular_font.html';
 	?>
@@ -86,65 +87,60 @@
 		</center>
 		<!-- End of Upper Area Profile Picture, Profile Name, Username, and Bio -->
 
-		<!-- Collapsible Area -->
-		<div class="accordion accordion-flush" id="Container">
+		<!-- Start for Tabs in User-profile -->
+	<div class="profile-tabs">
 
-			<!-- Buttons for collapsible area -->
-			<div class="button-container">
+		<!-- Start for Timeline-Tab -->
+			<input type="radio" name="profile-tabs" id="timeline-tab" checked="checked">
+			<label for="timeline-tab">Timeline</label>
+			<div class="tab-container">
 				<center>
-					<button class="btn posts-button" type="button" data-bs-toggle="collapse" data-bs-target="#Posts">
-						<b>Posts</b>
-					</button>
-					<button class="btn about-button" type="button" data-bs-toggle="collapse" data-bs-target="#About">
-						<b>About</b>
-					</button>
+					<h4>Your timeline</h4>
 				</center>
+				Posts Here...
 			</div>
-			<!-- Buttons for collapsible area -->
+		<!-- End of Timeline-Tab -->
+		
+		<!-- Start for About-Tab -->
+		<input type="radio" name="profile-tabs" id="about-tab">
+			<label for="about-tab">About</label>
+			<div class="tab-container">
+				<center>
+					<h4>About</h4>
+				</center>
+				
+				<div class="about-container">
 
-			<!-- About -->
-			<div id="About" class="collapse" data-bs-parent="#Container">
-				<div class="accordion-body">
-					<h2 class="About">About</h2>
-						<div class="about-container">
-							
-							<!-- User Gender -->
-							<div class="about-info">
-									<div><span><?php echo $User["GENDER"]; ?></span></div>
-									<div>Gender</div>
-								</div>
-							<!-- End User Gender -->
+					<!-- User Gender -->
+					<div class="about-info">
+						<div class="info"><span><?php echo $User["GENDER"]; ?></span></div>
+						<div>Gender</div>
+					</div>
+					<!-- End User Gender -->
 
-							<!-- User Contact -->
-							<div class="about-info">
-									<div><span><?php echo $User["EMAIL"]; ?></span></div>
-									<div>Contact</div>
-								</div>
-							<!-- End User Contact -->
-							
-							<!-- User Birthday -->
-								<div class="about-info">
-									<div><span><?php echo $User["BIRTHDAY"]; ?></span></div>
-									<div>Birthday</div>
-								</div>
-							<!-- End User Birthday -->
+					<!-- User Contact -->
+					<div class="about-info">
+						<div class="info"><span><?php echo $User["EMAIL"]; ?></span></div>
+						<div>Contact</div>
+					</div>
+					<!-- End User Contact -->
 
-						</div>
+					<!-- User Birthday -->
+					<div class="about-info">
+						<div class="info"><span><?php echo $User["BIRTHDAY"]; ?></span></div>
+						<div>Birthday</div>
+					</div>
+					<!-- End User Birthday -->
+
 				</div>
+
 			</div>
-			<!-- End of About -->
+		<!-- End of About-Tab -->
 
-			<!-- Posts -->
-			<div id="Posts" class="collapse" data-bs-parent="#Container">
-				<div class="accordion-body">
-					Posts Here...
-				</div>
-			</div>
-			<!-- End of Posts -->
-
-		</div>
-		<!-- End of Collapsible Area -->
-
+	</div>
+	<!-- End for Tabs in User-profile -->
+		
+		
 	<?php
 		// echo '<pre>';
 		// $User = $_SESSION['user_info'];

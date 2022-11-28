@@ -19,7 +19,6 @@ div.picture-container {
 	object-fit: scale-down;
 	border-radius: inherit;
 }
-/* -- end Profile-picture -- */
 
 /* -- Profiler name -- */
 p.name {
@@ -33,7 +32,6 @@ span.username {
 	font-weight: normal;
 	letter-spacing: normal;
 }
-/* -- end Profiler name -- */
 
 /* -- bio-container -- */
 div.bio-container {
@@ -43,94 +41,88 @@ p.bio {
 	padding: 7px;
 	letter-spacing: 1.5px;
 }
-/* -- end bio-container -- */
 
 /* ------------------------------------------ */
-/* For Collapasible buttons */
-#Container .button-container {
-	padding: 20px;
-}
-	/* post button */
-		#Container .posts-button {
-			background-color: rgb(221, 180, 180);
-			border: none;
-			border-radius: 10px;
-			margin: 0 3px 0 0;
-		}
-		#Container .posts-button:hover {
-			background-color: rgb(189, 179, 179);
-			border: none;
-		}
-		#Container .posts-button:active {
-			background-color: white;
-			border: none;
-			color: black;
-		}
-		#Container .posts-button:focus {
-			background-color: rgb(180, 174, 174);
-			color: black;
-			box-shadow: none;
-		}
-	/* end of post button */
 
-	/* about button */
-		#Container .about-button {
-			background-color: rgb(221, 180, 180);
-			border: none;
-			border-radius: 10px;
-			margin: 0 0 0 3px;
-		}
-		#Container .about-button:hover {
-			background-color: rgb(189, 179, 179);
-			border: none;
-		}
-		#Container .about-button:active {
-			background-color: white;
-			border: none;
-			color: black;
-		}
-		#Container .about-button:focus {
-			background-color: rgb(125, 121, 121);
-			box-shadow: none;
-			color: black;
-		}
-	/* end of about button */
+	/* For the Tabs in User profile */
 
-	/* About Container */
-		#Container .about-container {
-			height: auto;
-			width: 95%;
-			margin: 0 auto;
-		}
-		#Container .about-container .about-info {
-			margin: 0;
-			padding: 10px;	
-		}
-		#Container .about-container .about-info span {
-			font-size: 1.5em;
-			font-weight: 600;
-		}
-		#Container .About {
-			width: min-content;
-			border-bottom: 3px solid;
-		}
-	/* End About Container */
-
-/* End For Collapasible buttons */
-
-/* For Container of Posts and About Page */
-
-#Container {
-	margin: 50px 0 0 0;
-}
-#Container #Posts {
-	margin-top: 0;
-	background-color: rgb(180, 174, 174);
+/* for tab container */
+.profile-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 830px;
+	margin: 30px auto;
+	padding: 10px;
+	justify-content: space-between;
 }
 
-#Container #About {
-	margin-top: 0;
-	background-color: rgb(125, 121, 121);
+/* to remove the radio input button */
+.profile-tabs input[type="radio"] {
+	display: none;
 }
-/* End For Container */
-/* ------------------ */
+
+/* for the label which is two tab(Timeline and About) */
+.profile-tabs label {
+	padding: 10px;
+	background-color: #a8a1a1;
+	font-weight: 600;	
+	margin-right: 20px;
+	cursor: pointer;
+	border-radius: 8px 8px 0 0;
+	transition: background-color .3s;
+	width: 49.5%;
+}
+
+/* the container for all the content */
+.profile-tabs .tab-container {
+	width: 100%;
+	padding: 30px;
+	background-color: #ccc;
+	order: 1;
+	display: none;
+}
+
+/* if cursor hover to the tabs */
+.profile-tabs label:hover {
+	background-color: rgb(211, 191, 191);
+}
+
+/* if clicked a sudden white background will appear */
+.profile-tabs label:active {
+	background-color: white;
+}
+
+/* will show the content if the tab is clicked */
+.profile-tabs input[type="radio"]:checked + label + .tab-container {
+	display: block;
+}
+
+/* if the tab is clicked the background-color change  */
+.profile-tabs input[type="radio"]:checked + label {
+	background-color: #ccc;
+	border-top: solid;
+	border-color: #4b4444;
+}
+	/* End of the Tabs in User profile */
+
+/* ------------------------------------------ */
+
+/* About Container */
+	.profile-tabs .about-container {
+		height: auto;
+		width: 95%;
+		margin: 0 auto;
+	}
+	.profile-tabs .about-container .about-info {
+		margin: 0;
+		padding: 10px;	
+	}
+	.profile-tabs .about-container .about-info span {
+		font-size: 1.5em;
+		font-weight: 600;
+	}
+	.profile-tabs .About {
+		width: min-content;
+		border-bottom: 3px solid;
+	}
+/* End About Container */
