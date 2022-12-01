@@ -50,7 +50,7 @@
 	?>
 	<!-- End of Navigation Bar -->
 
-	<div class="m-5">
+	<div class="post-body">
 		<?php
 			for($index = 0 ; $index < $row_limit ; $index++){
 				// Make use don't convert spaces to tabs or the opposite, or it will parse error

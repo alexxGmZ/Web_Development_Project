@@ -1,12 +1,6 @@
-body {
-    box-sizing: border-box;
-    
-}
-.image {
-    height: inherit;
-    width: 100%;
-    object-fit: cover;
-}
-.content {
-    text-indent: 5%;
+.post-body{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	max-width: 900px
 }
