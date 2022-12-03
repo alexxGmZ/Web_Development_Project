@@ -57,7 +57,7 @@ You can edit or optimize the code, Just follow the Rules
 
 ### Database
 
-__Database Name:__ memesite
+__Database Name:__ ```memesite```
 
 **Query to setup MySQL Database:**
 
