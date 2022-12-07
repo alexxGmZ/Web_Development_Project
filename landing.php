@@ -52,78 +52,116 @@
 
 	<div class="post-body">
 		<?php
-			for($index = 0 ; $index < $row_limit ; $index++){
-				$post = $post[$index];
+			if(isset($_SESSION['is_logged_in'])){
+				for($index = 0 ; $index < $row_limit ; $index++){
+					$post = $post[$index];
 
-				// Make use don't convert spaces to tabs or the opposite, or it will parse error
-				// Heredoc strings are whitespace sensitive
-				if ($index == 0){
-					echo <<< FUNNIEST_MEME
-						<div class="row rounded-2 border shadow mb-3 pt-3 pb-3 ps-2 pe-2">
+					// Make use don't convert spaces to tabs or the opposite, or it will parse error
+					// Heredoc strings are whitespace sensitive
+					if ($index == 0){
+						echo <<< FUNNIEST_MEME
+							<div class="row rounded-2 border shadow mb-3 pt-3 pb-3 ps-2 pe-2">
 
-							<h1 class="text-center mb-4">Funniest Meme of the Day</h1>
+								<h1 class="text-center mb-4">Funniest Meme of the Day</h1>
 
-							<div class="text-center border">
-								<h2 class="text-center mb-4 pt-3">Image here</h2>
-							</div>
-
-							<div class="row g-0 pt-3">
-								<div class="col d-inline-flex justify-content-end me-2">
-									<button class="btn btn-outline-primary" type="button">
-										<div class="row g-0">
-											<img class="col me-1" src="./assets/icons/caret-up.svg">
-											<label class="col">0</label>
-										</div>
-									</button>
+								<div class="text-center border">
+									<h2 class="text-center mb-4 pt-3">Image here</h2>
 								</div>
-								<div class="col ms-2">
-									<button class="btn btn-outline-danger" type="button">
-										<div class="row g-0">
-											<img class="col me-1" src="./assets/icons/caret-down.svg">
-											<label class="col">0</label>
-										</div>
-									</button>
+
+								<div class="row g-0 pt-3">
+									<div class="col d-inline-flex justify-content-end me-2">
+										<button class="btn btn-outline-primary" type="button">
+											<div class="row g-0">
+												<img class="col me-1" src="./assets/icons/caret-up.svg">
+												<label class="col">0</label>
+											</div>
+										</button>
+									</div>
+									<div class="col ms-2">
+										<button class="btn btn-outline-danger" type="button">
+											<div class="row g-0">
+												<img class="col me-1" src="./assets/icons/caret-down.svg">
+												<label class="col">0</label>
+											</div>
+										</button>
+									</div>
 								</div>
+
+								<p></p>
+
 							</div>
+						FUNNIEST_MEME;
+					}
+					else{
+						echo <<< SUB_MEMES
+							<div class="row rounded-2 border shadow-lg mb-2 pt-3 pb-3 ps-2 pe-2">
 
-							<p></p>
+								<h3 class="text-center mb-4">Meh Meme of the Day</h3>
 
-						</div>
-					FUNNIEST_MEME;
+								<div class="text-center border">
+									<h2 class="text-center mb-4 pt-3">Image here</h2>
+								</div>
+
+								<div class="row g-0 pt-3">
+									<div class="col d-inline-flex justify-content-end me-2">
+										<button class="btn btn-outline-primary" type="button">
+											<div class="row g-0">
+												<img class="col me-1" src="./assets/icons/caret-up.svg">
+												<label class="col">0</label>
+											</div>
+										</button>
+									</div>
+									<div class="col ms-2">
+										<button class="btn btn-outline-danger" type="button">
+											<div class="row g-0">
+												<img class="col me-1" src="./assets/icons/caret-down.svg">
+												<label class="col">0</label>
+											</div>
+										</button>
+									</div>
+								</div>
+
+								<p></p>
+
+							</div>
+						SUB_MEMES;
+					}
 				}
-				else{
-					echo <<< SUB_MEMES
-						<div class="row rounded-2 border shadow-lg mb-2 pt-3 pb-3 ps-2 pe-2">
+			}
+			else{
+				for($index = 0 ; $index < $row_limit ; $index++){
+					$post = $post[$index];
 
-							<h3 class="text-center mb-4">Meh Meme of the Day</h3>
+					// Make use don't convert spaces to tabs or the opposite, or it will parse error
+					// Heredoc strings are whitespace sensitive
+					if ($index == 0){
+						echo <<< FUNNIEST_MEME
+							<div class="row rounded-2 border shadow mb-3 pt-3 pb-3 ps-2 pe-2">
+								<h1 class="text-center mb-4">Funniest Meme of the Day</h1>
 
-							<div class="text-center border">
-								<h2 class="text-center mb-4 pt-3">Image here</h2>
-							</div>
-
-							<div class="row g-0 pt-3">
-								<div class="col d-inline-flex justify-content-end me-2">
-									<button class="btn btn-outline-primary" type="button">
-										<div class="row g-0">
-											<img class="col me-1" src="./assets/icons/caret-up.svg">
-											<label class="col">0</label>
-										</div>
-									</button>
+								<div class="text-center border">
+									<h2 class="text-center mb-4 pt-3">Image here</h2>
 								</div>
-								<div class="col ms-2">
-									<button class="btn btn-outline-danger" type="button">
-										<div class="row g-0">
-											<img class="col me-1" src="./assets/icons/caret-down.svg">
-											<label class="col">0</label>
-										</div>
-									</button>
-								</div>
+
+								<p></p>
+
 							</div>
+						FUNNIEST_MEME;
+					}
+					else{
+						echo <<< SUB_MEMES
+							<div class="row rounded-2 border shadow-lg mb-2 pt-3 pb-3 ps-2 pe-2">
+								<h3 class="text-center mb-4">Meh Meme of the Day</h3>
 
-							<p></p>
+								<div class="text-center border">
+									<h2 class="text-center mb-4 pt-3">Image here</h2>
+								</div>
 
-						</div>
-					SUB_MEMES;
+								<p></p>
+
+							</div>
+						SUB_MEMES;
+					}
 				}
 			}
 		?>
