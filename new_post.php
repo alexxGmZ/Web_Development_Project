@@ -9,11 +9,12 @@
 		header("Location: ./landing.php");
 
 	$title = $_POST['title'] ?? null;
+	$user_id = $_SESSION['user_info']['USER_ID'];
 	// $content = $_POST['content'] ?? null;
 	// $category = $_POST['category'] ?? null;
 	// $publish_date = $_POST['publish_date'] ?? null;
 
-	$thumbnail = $_POST['thumbnail'] ?? null;
+	$image = $_POST['image'] ?? null;
 	$upload_ok = 1;
 
 	// $author_name = $_POST['author_name'] ?? null;
@@ -31,20 +32,20 @@
 		// if(!isset($publish_date) || strlen(trim($publish_date)) == 0) $has_error = 1;
 
 //
-//    Thumbnail Upload Validation
+//    Post Image Upload Validation
 //
-		$target_directory = './uploaded_files/article_thumbnails/';
-		$image_file_type = strtolower(pathinfo($_FILES['thumbnail']['name'], PATHINFO_EXTENSION));
+		$target_directory = './uploaded_files/memes_posted/';
+		$image_file_type = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
 
 		$time_stamp = time();
-		$file_destination = $target_directory."thumbnail_{$time_stamp}.{$image_file_type}";
-		$thumbnail = "thumbnail_{$time_stamp}.{$image_file_type}";
+		$file_destination = $target_directory."post_{$time_stamp}.{$image_file_type}";
+		$image = "post_{$time_stamp}.{$image_file_type}";
 		$upload_file_size = 10000000;
 
 		// checks if form is submitted
 		if (isset($_POST['submit'])){
 			// gets file size
-			$image_file_size = filesize($_FILES['thumbnail']['tmp_name']);
+			$image_file_size = filesize($_FILES['image']['tmp_name']);
 			if ($image_file_size === false){
 				$has_error = 1;
 				$upload_ok = 0;
@@ -52,7 +53,7 @@
 		}
 
 		// checks file if more than 10MB, if not file goes upload
-		if ($_FILES['thumbnail']['size'] > $upload_file_size){
+		if ($_FILES['image']['size'] > $upload_file_size){
 			$has_error = 1;
 			$upload_ok = 0;
 		}
@@ -65,7 +66,7 @@
 
 		// Upload File if has no error
 		if ($upload_ok == 1 && $has_error == 0){
-			$result = move_uploaded_file($_FILES['thumbnail']['tmp_name'], $file_destination);
+			$result = move_uploaded_file($_FILES['image']['tmp_name'], $file_destination);
 		}
 	}
 ?>
@@ -127,7 +128,31 @@
 			</div>
 			<!-- Title -->
 
-			<p class="text-center">Image Upload Section Here</p>
+			<!-- <p class="text-center">Image Upload Section Here</p> -->
+			<div class="mb-4">
+				<label for="image" class="form-label mt-2">Upload Post Image</label>
+				<input class="form-control mb-1" type="file"  id="image" name="image" accept="image/*">
+			</div>
+
+			<!-- Upload Picture Status Feedback -->
+			<?php if (isset($_POST['submit']) && $upload_ok == 0): ?>
+				<div class="mx-auto alert alert-danger pt-3 text-center" role="alert">
+					<strong>Image Upload Failed</strong><br>
+					<?php if ($_FILES['image']['size'] > $upload_file_size): ?>
+						<span>Exceeded 5MB File Size</span>
+					<?php endif; ?>
+
+					<?php if ($image_file_type != 'jpg' && $image_file_type != 'jpeg' && $image_file_type != 'png' && $image_file_type != 'gif'): ?>
+						<span>File Format Not Supported</span>
+					<?php endif; ?>
+				</div>
+			<?php elseif (isset($_POST['submit']) && $upload_ok == 1): ?>
+				<div class="mx-auto alert alert-success pt-3 text-center" role="alert">
+					<strong>Image Successfully Uploaded</strong>
+					<br>
+				</div>
+			<?php endif; ?>
+			<!-- Upload Picture Status Feedback -->
 
 			<!-- Publish Button -->
 			<div class="text-center mb-1">
@@ -138,7 +163,7 @@
 						// insert_new_article($pdo, $headline, $content, $category, $publish_date, $thumbnail, $author_name);
 
 						// for new database (memesite)
-						// function insert_new_post($pdo, $user_id, $title, $post_image, $upvote, $downvote){
+						insert_new_post($pdo, $user_id, $title, $image, $upvote, $downvote);
 						echo ' <script type="text/javascript">window.location.href = "./landing.php";</script>';
 					}
 				?>
