@@ -2,13 +2,6 @@
 	// database connection
 	require_once './partial/database_connection.php';
 
-	// old database (article_site)
-	// $statement = $pdo->prepare('
-	// 	SELECT * FROM `Written_Article`
-	// 	ORDER BY `Written_Article`.`PUBLISH_DATE` DESC
-	// 	LIMIT 10
-	// ');
-
 	// new database (memesite)
 	$statement = $pdo->prepare('
 		SELECT * FROM `Written_Posts`
@@ -18,7 +11,6 @@
 
 	$statement->execute();
 	$row_limit = $statement->rowCount();
-	// $row_limit = 2;
 	$post = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -50,6 +42,7 @@
 
 	<div class="post-body">
 		<?php
+			// if the user is logged in
 			if(isset($_SESSION['is_logged_in'])){
 				for($index = 0 ; $index < $row_limit ; $index++){
 
@@ -139,6 +132,8 @@
 					}
 				}
 			}
+
+			// logged out version
 			else{
 				for($index = 0 ; $index < $row_limit ; $index++){
 
