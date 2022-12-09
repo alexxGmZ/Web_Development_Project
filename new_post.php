@@ -79,14 +79,12 @@
 	<title>Create Article</title>
 
 	<!-- CSS -->
-	<link href="./style/global_style.css" rel="stylesheet" type="text/css">
 	<link href="./style/new_post.css" rel="stylesheet" type="text/css">
 	<!-- CSS -->
 
 	<?php
-		require_once './partial/favicon.html';
-		require_once './style/bootstrap.html';
-		require_once './style/ubuntu_regular_font.html';
+		// global requirements: favicon, global_style.css, Bootstrap, and Global Font
+		require_once './partial/global_requirements.html';
 	?>
 </head>
 
@@ -130,15 +128,16 @@
 
 			<!-- Image Upload -->
 			<div class="mb-4">
-				<script src="./partial/image_upload_preview.js"></script>
-
 				<label for="image" class="form-label mt-2">Upload Post Image</label>
 				<input class="form-control mb-3" type="file" name="image" accept="image/*" onchange="readURL(this);">
 
+				<!-- Image Preview -->
+				<script src="./partial/image_upload_preview.js"></script>
 				<div class="border p-2 text-center">
 					<p>Image Preview</p>
 					<img class="img-fluid" id="image" src="http://placehold.it/180"">
 				</div>
+				<!-- Image Preview -->
 			</div>
 			<!-- Image Upload -->
 

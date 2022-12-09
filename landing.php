@@ -26,13 +26,11 @@
 <html>
 <head>
 	<title>Landing Page</title>
-	<link href="./style/global_style.css" rel="stylesheet" type="text/css">
 	<link href="./style/landing_page.css" rel="stylesheet" type="text/css">
 
 	<?php
-		require_once './partial/favicon.html';
-		require_once './style/bootstrap.html';
-		require_once './style/ubuntu_regular_font.html';
+		// global requirements: favicon, global_style.css, Bootstrap, and Global Font
+		require_once './partial/global_requirements.html';
 	?>
 </head>
 

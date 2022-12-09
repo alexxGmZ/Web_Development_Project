@@ -9,13 +9,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="./style/global_style.css" rel="stylesheet" type="text/css">
 	<link href="./style/user_profile.css" rel="stylesheet" type="text/css">
 
 	<?php
-		require_once './partial/favicon.html';
-		require_once './style/bootstrap.html';
-		require_once './style/ubuntu_regular_font.html';
+		// global requirements: favicon, global_style.css, Bootstrap, and Global Font
+		require_once './partial/global_requirements.html';
 	?>
 </head>
 
@@ -100,7 +98,7 @@
 				Posts Here...
 			</div>
 		<!-- End of Timeline-Tab -->
-		
+
 		<!-- Start for About-Tab -->
 		<input type="radio" name="profile-tabs" id="about-tab">
 			<label for="about-tab">About</label>
@@ -108,7 +106,7 @@
 				<center>
 					<h4>About</h4>
 				</center>
-				
+
 				<div class="about-container">
 
 					<!-- User Gender -->
@@ -139,8 +137,8 @@
 
 	</div>
 	<!-- End for Tabs in User-profile -->
-		
-		
+
+
 	<?php
 		// echo '<pre>';
 		// $User = $_SESSION['user_info'];
