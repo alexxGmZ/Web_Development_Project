@@ -31,9 +31,9 @@
 		// if(!isset($category) || strlen(trim($category)) == 0) $has_error = 1;
 		// if(!isset($publish_date) || strlen(trim($publish_date)) == 0) $has_error = 1;
 
-//
-//    Post Image Upload Validation
-//
+		//
+		//    Post Image Upload Validation
+		//
 		$target_directory = './uploaded_files/memes_posted/';
 		$image_file_type = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
 
@@ -80,7 +80,7 @@
 
 	<!-- CSS -->
 	<link href="./style/global_style.css" rel="stylesheet" type="text/css">
-	<link href="./style/new_article_css.css" rel="stylesheet" type="text/css">
+	<link href="./style/new_post.css" rel="stylesheet" type="text/css">
 	<!-- CSS -->
 
 	<?php
@@ -116,7 +116,7 @@
 		<!-- Error Message -->
 	</div>
 
-	<div class="new_article_area border shadow-lg mt-3 mb-4 p-3 rounded-3">
+	<div class="new_post_area border shadow-lg mt-3 p-3 rounded-3">
 		<form class="m-2" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
 		  <!-- Title -->
 			<div class="mb-3
@@ -128,11 +128,19 @@
 			</div>
 			<!-- Title -->
 
-			<!-- <p class="text-center">Image Upload Section Here</p> -->
+			<!-- Image Upload -->
 			<div class="mb-4">
+				<script src="./partial/image_upload_preview.js"></script>
+
 				<label for="image" class="form-label mt-2">Upload Post Image</label>
-				<input class="form-control mb-1" type="file"  id="image" name="image" accept="image/*">
+				<input class="form-control mb-3" type="file" name="image" accept="image/*" onchange="readURL(this);">
+
+				<div class="border p-2 text-center">
+					<p>Image Preview</p>
+					<img class="img-fluid" id="image" src="http://placehold.it/180"">
+				</div>
 			</div>
+			<!-- Image Upload -->
 
 			<!-- Upload Picture Status Feedback -->
 			<?php if (isset($_POST['submit']) && $upload_ok == 0): ?>
@@ -146,7 +154,7 @@
 						<span>File Format Not Supported</span>
 					<?php endif; ?>
 				</div>
-			<?php elseif (isset($_POST['submit']) && $upload_ok == 1): ?>
+			<?php elseif (isset($_POST['submit']) && $upload_ok == 1 && $has_error == 0): ?>
 				<div class="mx-auto alert alert-success pt-3 text-center" role="alert">
 					<strong>Image Successfully Uploaded</strong>
 					<br>
@@ -154,27 +162,23 @@
 			<?php endif; ?>
 			<!-- Upload Picture Status Feedback -->
 
-			<!-- Publish Button -->
+			<!-- Post Button -->
 			<div class="text-center mb-1">
 				<button name="submit" type="submit" class="btn btn-success rounded-pill">Post Meme</button>
 				<?php
 					if(isset($_POST['submit']) && $has_error == 0){
-						// for old database (article_site)
-						// insert_new_article($pdo, $headline, $content, $category, $publish_date, $thumbnail, $author_name);
-
-						// for new database (memesite)
+						// function body is in database_connection.php
 						insert_new_post($pdo, $user_id, $title, $image, $upvote, $downvote);
 						echo ' <script type="text/javascript">window.location.href = "./landing.php";</script>';
 					}
 				?>
 			</div>
-			<!-- Publish Button -->
+			<!-- Post Button -->
 		</form>
 	</div>
 
 	<!-- Footer -->
 	<?php require_once './partial/footer.php'; ?>
 	<!-- Footer -->
-
 </body>
 </html>
