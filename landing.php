@@ -14,6 +14,84 @@
 	$post = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<?php
+	// funniest meme layout design function
+	function logged_in_top_meme_design($post){
+		// debugging purposes
+		var_dump($post);
+?>
+		<div class="row rounded-2 border shadow mb-3 pt-3 pb-3 ps-2 pe-2">
+			<h1 class="text-center mb-4">Funniest Meme of the Day</h1>
+
+			<h3 class="text-center"><?php echo $post["TITLE"];?></h3>
+
+			<div class="text-center border rounded-2 p-2">
+				<img class="img-fluid" src="./uploaded_files/memes_posted/<?php echo $post['POST_IMAGE'];?>">
+			</div>
+
+			<div class="row g-0 pt-3">
+				<div class="col d-inline-flex justify-content-end me-2">
+					<button class="btn btn-outline-primary" type="button">
+						<div class="row g-0">
+							<img class="col me-1" src="./assets/icons/caret-up.svg">
+							<label class="col"><?php echo $post["UPVOTE"];?></label>
+						</div>
+					</button>
+				</div>
+				<div class="col ms-2">
+					<button class="btn btn-outline-danger" type="button">
+						<div class="row g-0">
+							<img class="col me-1" src="./assets/icons/caret-down.svg">
+							<label class="col"><?php echo $post["UPVOTE"];?></label>
+						</div>
+					</button>
+				</div>
+			</div>
+			<p></p>
+		</div>
+<?php
+	}
+?>
+
+<?php
+	// meme layout design function
+	function logged_in_meme_design($post){
+		// debugging purposes
+		var_dump($post);
+?>
+		<div class="row rounded-2 border shadow-lg mb-2 pt-3 pb-3 ps-2 pe-2">
+			<h3 class="text-center"><?php echo $post["TITLE"];?></h3>
+
+			<div class="text-center border p-2">
+				<img class="img-fluid" src="./uploaded_files/memes_posted/<?php echo $post["POST_IMAGE"];?>">
+			</div>
+
+			<div class="row g-0 pt-3">
+				<div class="col d-inline-flex justify-content-end me-2">
+					<button class="btn btn-outline-primary" type="button">
+						<div class="row g-0">
+							<img class="col me-1" src="./assets/icons/caret-up.svg">
+							<label class="col"><?php echo $post["UPVOTE"];?></label>
+						</div>
+					</button>
+				</div>
+				<div class="col ms-2">
+					<button class="btn btn-outline-danger" type="button">
+						<div class="row g-0">
+							<img class="col me-1" src="./assets/icons/caret-down.svg">
+							<label class="col"><?php echo $post["DOWNVOTE"];?></label>
+						</div>
+					</button>
+				</div>
+			</div>
+
+			<p></p>
+
+		</div>
+<?php
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,80 +133,10 @@
 					// Make use don't convert spaces to tabs or the opposite, or it will parse error
 					// Heredoc strings are whitespace sensitive
 					if ($index == 0){
-						// for debugging purposes
-						var_dump($post[$index]);
-
-						echo <<< FUNNIEST_MEME
-							<div class="row rounded-2 border shadow mb-3 pt-3 pb-3 ps-2 pe-2">
-								<h1 class="text-center mb-4">Funniest Meme of the Day</h1>
-
-								<h3 class="text-center">{$post[$index]['TITLE']}</h3>
-
-								<div class="text-center border rounded-2 p-2">
-									<img class="img-fluid" src="./uploaded_files/memes_posted/{$post[$index]['POST_IMAGE']}">
-								</div>
-
-								<div class="row g-0 pt-3">
-									<div class="col d-inline-flex justify-content-end me-2">
-										<button class="btn btn-outline-primary" type="button">
-											<div class="row g-0">
-												<img class="col me-1" src="./assets/icons/caret-up.svg">
-												<label class="col">{$post[$index]['UPVOTE']}</label>
-											</div>
-										</button>
-									</div>
-									<div class="col ms-2">
-										<button class="btn btn-outline-danger" type="button">
-											<div class="row g-0">
-												<img class="col me-1" src="./assets/icons/caret-down.svg">
-												<label class="col">{$post[$index]['DOWNVOTE']}</label>
-											</div>
-										</button>
-									</div>
-								</div>
-
-								<p></p>
-							</div>
-						FUNNIEST_MEME;
+						logged_in_top_meme_design($post[$index]);
 					}
 					else{
-						// for debugging purposes
-						var_dump($post[$index]);
-
-						echo <<< SUB_MEMES
-							<div class="row rounded-2 border shadow-lg mb-2 pt-3 pb-3 ps-2 pe-2">
-
-								<h3 class="text-center mb-4">Meh Meme of the Day</h3>
-
-								<h3 class="text-center">{$post[$index]['TITLE']}</h3>
-
-								<div class="text-center border p-2">
-									<img class="img-fluid" src="./uploaded_files/memes_posted/{$post[$index]['POST_IMAGE']}">
-								</div>
-
-								<div class="row g-0 pt-3">
-									<div class="col d-inline-flex justify-content-end me-2">
-										<button class="btn btn-outline-primary" type="button">
-											<div class="row g-0">
-												<img class="col me-1" src="./assets/icons/caret-up.svg">
-												<label class="col">{$post[$index]['UPVOTE']}</label>
-											</div>
-										</button>
-									</div>
-									<div class="col ms-2">
-										<button class="btn btn-outline-danger" type="button">
-											<div class="row g-0">
-												<img class="col me-1" src="./assets/icons/caret-down.svg">
-												<label class="col">{$post[$index]['DOWNVOTE']}</label>
-											</div>
-										</button>
-									</div>
-								</div>
-
-								<p></p>
-
-							</div>
-						SUB_MEMES;
+						logged_in_meme_design($post[$index]);
 					}
 				}
 			}
@@ -137,7 +145,7 @@
 			else{
 				for($index = 0 ; $index < $row_limit ; $index++){
 
-					// Make use don't convert spaces to tabs or the opposite, or it will parse error
+					// Make sure don't convert spaces to tabs or the opposite, or it will parse error
 					// Heredoc strings are whitespace sensitive
 					if ($index == 0){
 						echo <<< FUNNIEST_MEME
@@ -149,25 +157,17 @@
 								<div class="text-center border rounded-2 p-2">
 									<img class="img-fluid" src="./uploaded_files/memes_posted/{$post[$index]['POST_IMAGE']}">
 								</div>
-
-								<p></p>
-
 							</div>
 						FUNNIEST_MEME;
 					}
 					else{
 						echo <<< SUB_MEMES
 							<div class="row rounded-2 border shadow-lg mb-2 pt-3 pb-3 ps-2 pe-2">
-								<h3 class="text-center mb-4">Meh Meme of the Day</h3>
-
 								<h3 class="text-center">{$post[$index]['TITLE']}</h3>
 
 								<div class="text-center border rounded-2 p-2">
 									<img class="img-fluid" src="./uploaded_files/memes_posted/{$post[$index]['POST_IMAGE']}">
 								</div>
-
-								<p></p>
-
 							</div>
 						SUB_MEMES;
 					}
