@@ -6,7 +6,6 @@
 	$statement = $pdo->prepare('
 		SELECT * FROM `Written_Posts`
 		ORDER BY `Written_Posts`.`DATE_POSTED` DESC
-		LIMIT 10
 	');
 
 	$statement->execute();
@@ -16,11 +15,11 @@
 
 <?php
 	// funniest meme layout design function
-	function logged_in_top_meme_design($post){
+	function top_meme_layout($post){
 		// debugging purposes
-		var_dump($post);
+		// var_dump($post);
 ?>
-		<div class="row rounded-2 border shadow mb-3 pt-3 pb-3 ps-2 pe-2">
+		<div class="row rounded-2 border shadow mb-4 pt-3 pb-3 ps-2 pe-2">
 			<h1 class="text-center mb-4">Funniest Meme of the Day</h1>
 
 			<h3 class="text-center"><?php echo $post["TITLE"];?></h3>
@@ -29,64 +28,134 @@
 				<img class="img-fluid" src="./uploaded_files/memes_posted/<?php echo $post['POST_IMAGE'];?>">
 			</div>
 
-			<div class="row g-0 pt-3">
-				<div class="col d-inline-flex justify-content-end me-2">
-					<button class="btn btn-outline-primary" type="button">
-						<div class="row g-0">
-							<img class="col me-1" src="./assets/icons/caret-up.svg">
-							<label class="col"><?php echo $post["UPVOTE"];?></label>
-						</div>
-					</button>
-				</div>
-				<div class="col ms-2">
-					<button class="btn btn-outline-danger" type="button">
-						<div class="row g-0">
-							<img class="col me-1" src="./assets/icons/caret-down.svg">
-							<label class="col"><?php echo $post["UPVOTE"];?></label>
-						</div>
-					</button>
-				</div>
+			<div class="row pt-3">
+				<!-- when not logged in, redirect buttons to login page -->
+				<?php if (!isset($_SESSION['is_logged_in'])): ?>
+					<div class="col justify-content-end d-inline-flex">
+						<a class="btn btn-outline-primary" type="button" href="./login.php">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/caret-up.svg">
+								<label class="col"><?php echo $post["UPVOTE"];?></label>
+							</div>
+						</a>
+					</div>
+					<div class="col-auto p-0 text-center">
+						<a class="btn btn-outline-danger" type="button" href="./login.php">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/caret-down.svg">
+								<label class="col"><?php echo $post["UPVOTE"];?></label>
+							</div>
+						</a>
+					</div>
+					<div class="col">
+						<a class="btn btn-outline-success rounded-pill" type="button" href="./login.php">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/chat-left.svg">
+								<label class="col">0</label>
+							</div>
+						</a>
+					</div>
+
+				<?php else: ?>
+					<div class="col justify-content-end d-inline-flex">
+						<button class="btn btn-outline-primary" type="button">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/caret-up.svg">
+								<label class="col"><?php echo $post["UPVOTE"];?></label>
+							</div>
+						</button>
+					</div>
+					<div class="col-auto p-0 text-center">
+						<button class="btn btn-outline-danger" type="button">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/caret-down.svg">
+								<label class="col"><?php echo $post["UPVOTE"];?></label>
+							</div>
+						</button>
+					</div>
+					<div class="col">
+						<button class="btn btn-outline-success rounded-pill" type="button">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/chat-left.svg">
+								<label class="col">0</label>
+							</div>
+						</button>
+					</div>
+				<?php endif ?>
 			</div>
-			<p></p>
 		</div>
 <?php
 	}
 ?>
 
 <?php
-	// meme layout design function
-	function logged_in_meme_design($post){
+	// ordynary meme layout design function
+	function ordinary_meme_layout($post){
 		// debugging purposes
-		var_dump($post);
+		// var_dump($post);
 ?>
-		<div class="row rounded-2 border shadow-lg mb-2 pt-3 pb-3 ps-2 pe-2">
+		<div class="row rounded-2 border shadow-lg mb-4 pt-3 pb-3 ps-2 pe-2">
 			<h3 class="text-center"><?php echo $post["TITLE"];?></h3>
 
 			<div class="text-center border p-2">
 				<img class="img-fluid" src="./uploaded_files/memes_posted/<?php echo $post["POST_IMAGE"];?>">
 			</div>
 
-			<div class="row g-0 pt-3">
-				<div class="col d-inline-flex justify-content-end me-2">
-					<button class="btn btn-outline-primary" type="button">
-						<div class="row g-0">
-							<img class="col me-1" src="./assets/icons/caret-up.svg">
-							<label class="col"><?php echo $post["UPVOTE"];?></label>
-						</div>
-					</button>
-				</div>
-				<div class="col ms-2">
-					<button class="btn btn-outline-danger" type="button">
-						<div class="row g-0">
-							<img class="col me-1" src="./assets/icons/caret-down.svg">
-							<label class="col"><?php echo $post["DOWNVOTE"];?></label>
-						</div>
-					</button>
-				</div>
+			<div class="row pt-3">
+				<!-- when not logged in, redirect buttons to login page -->
+				<?php if (!isset($_SESSION['is_logged_in'])): ?>
+					<div class="col justify-content-end d-inline-flex">
+						<a class="btn btn-outline-primary" type="button" href="./login.php">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/caret-up.svg">
+								<label class="col"><?php echo $post["UPVOTE"];?></label>
+							</div>
+						</a>
+					</div>
+					<div class="col-auto p-0 text-center">
+						<a class="btn btn-outline-danger" type="button" href="./login.php">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/caret-down.svg">
+								<label class="col"><?php echo $post["UPVOTE"];?></label>
+							</div>
+						</a>
+					</div>
+					<div class="col">
+						<a class="btn btn-outline-success rounded-pill" type="button" href="./login.php">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/chat-left.svg">
+								<label class="col">0</label>
+							</div>
+						</a>
+					</div>
+
+				<?php else: ?>
+					<div class="col justify-content-end d-inline-flex">
+						<button class="btn btn-outline-primary" type="button">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/caret-up.svg">
+								<label class="col"><?php echo $post["UPVOTE"];?></label>
+							</div>
+						</button>
+					</div>
+					<div class="col-auto p-0 text-center">
+						<button class="btn btn-outline-danger" type="button">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/caret-down.svg">
+								<label class="col"><?php echo $post["UPVOTE"];?></label>
+							</div>
+						</button>
+					</div>
+					<div class="col">
+						<button class="btn btn-outline-success rounded-pill" type="button">
+							<div class="row g-0">
+								<img class="col me-1" src="./assets/icons/chat-left.svg">
+								<label class="col">0</label>
+							</div>
+						</button>
+					</div>
+				<?php endif ?>
 			</div>
-
-			<p></p>
-
 		</div>
 <?php
 	}
@@ -120,57 +189,18 @@
 
 	<div class="post-body">
 		<?php
-			// if the user is logged in
-			if(isset($_SESSION['is_logged_in'])){
-				for($index = 0 ; $index < $row_limit ; $index++){
+			for($index = 0 ; $index < $row_limit ; $index++){
+				// when upvote and downvote is null in the database
+				if($post[$index]['UPVOTE'] == NULL)
+					$post[$index]['UPVOTE'] = 0;
+				if($post[$index]['DOWNVOTE'] == NULL)
+					$post[$index]['DOWNVOTE'] = 0;
 
-					// when upvote and downvote is null in the database
-					if($post[$index]['UPVOTE'] == NULL)
-						$post[$index]['UPVOTE'] = 0;
-					if($post[$index]['DOWNVOTE'] == NULL)
-						$post[$index]['DOWNVOTE'] = 0;
-
-					// Make use don't convert spaces to tabs or the opposite, or it will parse error
-					// Heredoc strings are whitespace sensitive
-					if ($index == 0){
-						logged_in_top_meme_design($post[$index]);
-					}
-					else{
-						logged_in_meme_design($post[$index]);
-					}
+				if ($index == 0){
+					top_meme_layout($post[$index]);
 				}
-			}
-
-			// logged out version
-			else{
-				for($index = 0 ; $index < $row_limit ; $index++){
-
-					// Make sure don't convert spaces to tabs or the opposite, or it will parse error
-					// Heredoc strings are whitespace sensitive
-					if ($index == 0){
-						echo <<< FUNNIEST_MEME
-							<div class="row rounded-2 border shadow mb-3 pt-3 pb-3 ps-2 pe-2">
-								<h1 class="text-center mb-4">Funniest Meme of the Day</h1>
-
-								<h3 class="text-center">{$post[$index]['TITLE']}</h3>
-
-								<div class="text-center border rounded-2 p-2">
-									<img class="img-fluid" src="./uploaded_files/memes_posted/{$post[$index]['POST_IMAGE']}">
-								</div>
-							</div>
-						FUNNIEST_MEME;
-					}
-					else{
-						echo <<< SUB_MEMES
-							<div class="row rounded-2 border shadow-lg mb-2 pt-3 pb-3 ps-2 pe-2">
-								<h3 class="text-center">{$post[$index]['TITLE']}</h3>
-
-								<div class="text-center border rounded-2 p-2">
-									<img class="img-fluid" src="./uploaded_files/memes_posted/{$post[$index]['POST_IMAGE']}">
-								</div>
-							</div>
-						SUB_MEMES;
-					}
+				else{
+					ordinary_meme_layout($post[$index]);
 				}
 			}
 		?>
