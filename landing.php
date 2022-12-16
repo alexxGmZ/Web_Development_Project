@@ -15,19 +15,47 @@
 
 <?php
 	// funniest meme layout design function
-	function posted_meme_layout($post, $index){
+	function posted_meme_layout($post, $index, $pdo){
 		// debugging purposes
 		// var_dump($post);
+
+		// fetch USER_NAME from Registered_Users database based on the USER_ID inside the Written_Posts database
+		$id = $post["USER_ID"];
+		$statement = $pdo->prepare('
+			SELECT USER_NAME FROM Registered_Users WHERE USER_ID=? LIMIT 1
+		');
+		$statement->execute([$id]);
+		$poster = $statement->fetch();
+		// echo "<pre>";
+		// var_dump($poster);
+		// echo "</pre>";
+
+		// fetch PROFILE_PIC from Registered_Users database based on the USER_ID inside the Written_Posts database
+		$statement = $pdo->prepare('
+			SELECT PROFILE_PIC FROM Registered_Users WHERE USER_ID=? LIMIT 1
+		');
+		$statement->execute([$id]);
+		$profile_pic = $statement->fetch();
+		// echo "<pre>";
+		// var_dump($profile_pic);
+		// echo "</pre>";
 ?>
 		<div class="row rounded-2 border shadow mb-4 pt-3 pb-3 ps-2 pe-2">
 			<?php if ($index == 0): ?>
 				<h1 class="text-center mb-4">Funniest Meme of the Day</h1>
 			<?php endif ?>
 
+			<!-- Profile Picture here -->
+			<!-- Profile Picture here -->
+
+			<p>
+				Posted by: <b><?php echo $poster["USER_NAME"]; ?></b>
+			</p>
+
 			<h3 class="text-center"><?php echo $post["TITLE"];?></h3>
 
 			<div class="text-center border rounded-2 p-2">
-				<img class="img-fluid" src="./uploaded_files/memes_posted/<?php echo $post['POST_IMAGE'];?>">
+				<img class="img-fluid rounded mx-auto d-block" src="./uploaded_files/memes_posted/<?php echo $post['POST_IMAGE'];?>">
 			</div>
 
 			<div class="row pt-3">
@@ -102,7 +130,7 @@
 	?>
 </head>
 
-<body class="">
+<body>
 	<!-- Navigation Bar -->
 	<?php
 		//require_once './partial/navbar.php';
@@ -125,7 +153,7 @@
 				if($post[$index]['DOWNVOTE'] == NULL)
 					$post[$index]['DOWNVOTE'] = 0;
 
-				posted_meme_layout($post[$index], $index);
+				posted_meme_layout($post[$index], $index, $pdo);
 			}
 		?>
 	</div>
