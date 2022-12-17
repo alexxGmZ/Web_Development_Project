@@ -50,7 +50,7 @@
 		$statement->execute();
 	}
 
-	function get_user_login($email,$password,$pdo){
+	function get_user_login($email, $password, $pdo){
 
 		//$password = md5($password);
 		$statement = $pdo->prepare('
@@ -67,6 +67,26 @@
 		$users['row_count'] = $statement->rowCount(); // returns 1 if successsful else 0 on failure
 
 		return $users;
+	}
+
+	// fetch USER_NAME from Registered_Users database based on the USER_ID inside the Written_Posts database
+	function get_poster_user_name($pdo, $user_id){
+		$statement = $pdo->prepare('
+			SELECT USER_NAME FROM Registered_Users WHERE USER_ID=? LIMIT 1
+		');
+		$statement->execute([$user_id]);
+		$poster = $statement->fetch();
+		return $poster[0];
+	}
+
+	// fetch PROFILE_PIC from Registered_Users database based on the USER_ID inside the Written_Posts database
+	function get_poster_profile_pic($pdo, $user_id){
+		$statement = $pdo->prepare('
+			SELECT PROFILE_PIC FROM Registered_Users WHERE USER_ID=? LIMIT 1
+		');
+		$statement->execute([$user_id]);
+		$profile_pic = $statement->fetch();
+		return $profile_pic[0];
 	}
 
 ?>

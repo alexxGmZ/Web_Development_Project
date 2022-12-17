@@ -19,23 +19,13 @@
 		// debugging purposes
 		// var_dump($post);
 
-		// fetch USER_NAME from Registered_Users database based on the USER_ID inside the Written_Posts database
 		$id = $post["USER_ID"];
-		$statement = $pdo->prepare('
-			SELECT USER_NAME FROM Registered_Users WHERE USER_ID=? LIMIT 1
-		');
-		$statement->execute([$id]);
-		$poster = $statement->fetch();
+		$poster = get_poster_user_name($pdo, $id);
 		// echo "<pre>";
 		// var_dump($poster);
 		// echo "</pre>";
 
-		// fetch PROFILE_PIC from Registered_Users database based on the USER_ID inside the Written_Posts database
-		$statement = $pdo->prepare('
-			SELECT PROFILE_PIC FROM Registered_Users WHERE USER_ID=? LIMIT 1
-		');
-		$statement->execute([$id]);
-		$profile_pic = $statement->fetch();
+		$poster_profile_pic = get_poster_profile_pic($pdo, $id);
 		// echo "<pre>";
 		// var_dump($profile_pic);
 		// echo "</pre>";
@@ -49,7 +39,7 @@
 			<!-- Profile Picture here -->
 
 			<p>
-				Posted by: <b><?php echo $poster["USER_NAME"]; ?></b>
+				Posted by: <b><?php echo $poster; ?></b>
 			</p>
 
 			<h3 class="text-center"><?php echo $post["TITLE"];?></h3>
