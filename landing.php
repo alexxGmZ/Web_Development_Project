@@ -70,7 +70,7 @@
 						<a class="btn btn-outline-danger" type="button" href="./login.php">
 							<div class="row g-0">
 								<img class="col me-1" src="./assets/icons/caret-down.svg">
-								<label class="col"><?php echo $post["UPVOTE"];?></label>
+								<label class="col"><?php echo $post["DOWNVOTE"];?></label>
 							</div>
 						</a>
 					</div>
@@ -96,7 +96,7 @@
 						<button class="btn btn-outline-danger" type="button">
 							<div class="row g-0">
 								<img class="col me-1" src="./assets/icons/caret-down.svg">
-								<label class="col"><?php echo $post["UPVOTE"];?></label>
+								<label class="col"><?php echo $post["DOWNVOTE"];?></label>
 							</div>
 						</button>
 					</div>
@@ -145,9 +145,9 @@
 		<?php
 			for($index = 0 ; $index < $row_limit ; $index++){
 				// when upvote and downvote is null in the database
-				if($post[$index]['UPVOTE'] == NULL)
+				if ($post[$index]['UPVOTE'] == NULL || $post[$index]['UPVOTE'] < 0)
 					$post[$index]['UPVOTE'] = 0;
-				if($post[$index]['DOWNVOTE'] == NULL)
+				if ($post[$index]['DOWNVOTE'] == NULL || $post[$index]['DOWNVOTE'] < 0)
 					$post[$index]['DOWNVOTE'] = 0;
 
 				posted_meme_layout($post[$index], $index, $pdo);
