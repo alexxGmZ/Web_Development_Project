@@ -179,17 +179,16 @@
 			</div>
 			<!--- Birthday --->
 
-			<!-- - Address - -->
-			<!-- <div class="form-floating mb-3"> -->
-			<!-- <input type="text" class="form-control" name="home_add" placeholder=" " value="<?php echo $home_add; ?>"> -->
-				<!-- <label>Address:</label> -->
-			<!-- </div> -->
-			<!--- Address --->
-
 			<!-- Upload Profile Picture -->
 			<div class="mb-2">
 				<label for="profile_pic" class="form-label mt-2">Profile Picture</label>
-				<input class="form-control mb-1" type="file"  id="profile_pic" name="profile_pic" accept="image/*">
+				<input class="form-control mb-2" type="file" name="profile_pic" accept="image/*" onchange="readURL(this);">
+
+				<script src="./partial/image_upload_preview.js"></script>
+				<div class="border p-2 text-center rounded">
+					<p>Image Preview</p>
+					<img class="img-fluid" id="image" src="http://placehold.it/180"">
+				</div>
 			</div>
 			<!-- Upload Profile Picture -->
 

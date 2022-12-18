@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	//echo '<pre>';
-	//var_dump($_SESSION);
-	//echo '</pre>';
+	// echo '<pre>';
+	// var_dump($_SESSION);
+	// echo '</pre>';
 
 	// database connection (old database connection)
 	// $pdo = new PDO('mysql:host=localhost;port=3306;dbname=article_site', 'root', '');
