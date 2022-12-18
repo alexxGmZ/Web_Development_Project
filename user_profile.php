@@ -27,26 +27,16 @@
 			require './partial/logged_in_navbar.php';
 		else
 			require './partial/navbar.php';
-
-		// echo '<pre>';
-		// var_dump($_SESSION['user_info']);
-		// echo '</pre>';
 	?>
 	<?php
-	//Access the Specific Data from the Array
+		//Access the Specific Data from the Array
 		//Assign the 'user_info' to variable $User to easily access its data individually
 		$User = $_SESSION['user_info'];
+		// echo "<pre>";
+		// var_dump($User);
+		// echo "</pre>";
 
 		$profile_pic = $User["PROFILE_PIC"];
-		// echo $User["USER_ID"];
-		// echo $User["FIRST_NAME"];
-		// echo $User["LAST_NAME"];
-		// echo $User["USER_NAME"];
-		// echo $User["EMAIL"];
-		// echo $User["PASSWORD"];
-		// echo $User["GENDER"];
-		// echo $User["BIRTHDAY"];
-		// echo $User["BIO"];
 	?>
 
 	<div class="profile_area border shadow-lg rounded-3 p-3">
@@ -62,13 +52,9 @@
 			<!-- name and user-name -->
 			<div class="name-container">
 				<p class="name">
-						<?php
-							echo $User["FIRST_NAME"]." ".$User["LAST_NAME"];
-						?>
+					<?php echo $User["FIRST_NAME"]." ".$User["LAST_NAME"]; ?>
 					<span class="username">
-						<?php
-							echo "( ".$User["USER_NAME"]." )";
-						?>
+						<?php echo "@".$User["USER_NAME"]; ?>
 					</span>
 				</p>
 			</div>
@@ -81,14 +67,12 @@
 					?>
 				</p>
 			</div>
-
 		</center>
 		<!-- End of Upper Area Profile Picture, Profile Name, Username, and Bio -->
 
 		<!-- Start for Tabs in User-profile -->
-	<div class="profile-tabs">
-
-		<!-- Start for Timeline-Tab -->
+		<div class="profile-tabs">
+			<!-- Start for Timeline-Tab -->
 			<input type="radio" name="profile-tabs" id="timeline-tab" checked="checked">
 			<label for="timeline-tab">Timeline</label>
 			<div class="tab-container">
@@ -97,10 +81,10 @@
 				</center>
 				Posts Here...
 			</div>
-		<!-- End of Timeline-Tab -->
+			<!-- End of Timeline-Tab -->
 
-		<!-- Start for About-Tab -->
-		<input type="radio" name="profile-tabs" id="about-tab">
+			<!-- Start for About-Tab -->
+			<input type="radio" name="profile-tabs" id="about-tab">
 			<label for="about-tab">About</label>
 			<div class="tab-container">
 				<center>
@@ -129,22 +113,11 @@
 						<div>Birthday</div>
 					</div>
 					<!-- End User Birthday -->
-
 				</div>
-
 			</div>
-		<!-- End of About-Tab -->
-
-	</div>
+			<!-- End of About-Tab -->
+		</div>
 	<!-- End for Tabs in User-profile -->
-
-
-	<?php
-		// echo '<pre>';
-		// $User = $_SESSION['user_info'];
-		// var_dump($User);
-		// echo '</pre>';
-	?>
 	</div>
 
 	<!-- Footer -->
