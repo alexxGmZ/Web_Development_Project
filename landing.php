@@ -17,7 +17,9 @@
 	// funniest meme layout design function
 	function posted_meme_layout($post, $index, $pdo){
 		// debugging purposes
+		// echo "<pre>";
 		// var_dump($post);
+		// echo "</pre>";
 
 		$id = $post["USER_ID"];
 		$poster = get_poster_user_name($pdo, $id);
@@ -25,7 +27,7 @@
 		// var_dump($poster);
 		// echo "</pre>";
 
-		$poster_profile_pic = "./uploaded_files/profile_pics/" . get_poster_profile_pic($pdo, $id);
+		$poster_profile_pic = get_poster_profile_pic($pdo, $id);
 		// echo "<pre>";
 		// var_dump($poster_profile_pic);
 		// echo "</pre>";
@@ -35,29 +37,16 @@
 				<h1 class="text-center mb-4">Funniest Meme of the Day</h1>
 			<?php endif ?>
 
-			<!-- Profile Picture here -->
-			<!-- Profile Picture here -->
-
 			<div class="row">
-				<?php if (!isset($_SESSION['is_logged_in'])): ?>
-					<a class="text-decoration-none text-dark" href="./login.php">
-						<div class="row">
-							<div class="col-auto me-2 profile-pic-container">
-								<img class="poster-profile-pic" src="<?php echo $poster_profile_pic; ?>">
-							</div>
-							<b class="col align-self-center"><?php echo $poster; ?></b>
+				<!-- when not logged in, clicking will redirect to login page -->
+				<a class="text-decoration-none text-dark" href="<?php echo (isset($_SESSION['is_logged_in']) ? "" : "./login.php") ?>">
+					<div class="row">
+						<div class="col-auto me-2 profile-pic-container">
+							<img class="poster-profile-pic" src="<?php echo $poster_profile_pic; ?>">
 						</div>
-					</a>
-				<?php else: ?>
-					<a class="text-decoration-none text-dark" href="">
-						<div class="row">
-							<div class="col-auto me-2 profile-pic-container">
-								<img class="poster-profile-pic" src="<?php echo $poster_profile_pic; ?>">
-							</div>
-							<b class="col align-self-center"><?php echo $poster; ?></b>
-						</div>
-					</a>
-				<?php endif?>
+						<b class="col align-self-center"><?php echo $poster; ?></b>
+					</div>
+				</a>
 			</div>
 
 			<h3 class="text-center"><?php echo $post["TITLE"];?></h3>

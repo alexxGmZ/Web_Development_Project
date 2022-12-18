@@ -86,7 +86,7 @@
 		');
 		$statement->execute([$user_id]);
 		$profile_pic = $statement->fetch();
-		return $profile_pic[0];
+		return "./uploaded_files/profile_pics/" . $profile_pic[0];
 	}
 
 ?>
