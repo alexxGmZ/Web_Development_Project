@@ -25,9 +25,9 @@
 		// var_dump($poster);
 		// echo "</pre>";
 
-		$poster_profile_pic = get_poster_profile_pic($pdo, $id);
+		$poster_profile_pic = "./uploaded_files/profile_pics/" . get_poster_profile_pic($pdo, $id);
 		// echo "<pre>";
-		// var_dump($profile_pic);
+		// var_dump($poster_profile_pic);
 		// echo "</pre>";
 ?>
 		<div class="row rounded-2 border shadow mb-4 pt-3 pb-3 ps-2 pe-2">
@@ -38,9 +38,27 @@
 			<!-- Profile Picture here -->
 			<!-- Profile Picture here -->
 
-			<p>
-				Posted by: <b><?php echo $poster; ?></b>
-			</p>
+			<div class="row">
+				<?php if (!isset($_SESSION['is_logged_in'])): ?>
+					<a class="text-decoration-none text-dark" href="./login.php">
+						<div class="row">
+							<div class="col-auto me-2 profile-pic-container">
+								<img class="poster-profile-pic" src="<?php echo $poster_profile_pic; ?>">
+							</div>
+							<b class="col align-self-center"><?php echo $poster; ?></b>
+						</div>
+					</a>
+				<?php else: ?>
+					<a class="text-decoration-none text-dark" href="">
+						<div class="row">
+							<div class="col-auto me-2 profile-pic-container">
+								<img class="poster-profile-pic" src="<?php echo $poster_profile_pic; ?>">
+							</div>
+							<b class="col align-self-center"><?php echo $poster; ?></b>
+						</div>
+					</a>
+				<?php endif?>
+			</div>
 
 			<h3 class="text-center"><?php echo $post["TITLE"];?></h3>
 
