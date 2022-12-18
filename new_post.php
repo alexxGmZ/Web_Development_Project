@@ -135,7 +135,7 @@
 				<script src="./partial/image_upload_preview.js"></script>
 				<div class="border p-2 text-center">
 					<p>Image Preview</p>
-					<img class="img-fluid" id="image" src="http://placehold.it/180"">
+					<img class="img-fluid" id="image" alt="" src="http://placehold.it/180"">
 				</div>
 				<!-- Image Preview -->
 			</div>

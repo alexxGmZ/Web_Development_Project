@@ -187,7 +187,7 @@
 				<script src="./partial/image_upload_preview.js"></script>
 				<div class="border p-2 text-center rounded">
 					<p>Image Preview</p>
-					<img class="img-fluid" id="image" src="http://placehold.it/180"">
+					<img class="img-fluid" id="image" alt="" src="http://placehold.it/180"">
 				</div>
 			</div>
 			<!-- Upload Profile Picture -->
@@ -195,18 +195,18 @@
 			<!-- Upload Profile Picture Status Feedback -->
 			<?php if (isset($_POST['submit']) && $upload_ok == 0): ?>
 				<div class="mx-auto alert alert-danger pt-3 text-center" role="alert">
-					<strong>Image Upload Failed</strong><br>
+					<strong>Image Verification Failed</strong><br>
 					<?php if ($_FILES['profile_pic']['size'] > $upload_file_size): ?>
 						<span>Exceeded 5MB File Size</span>
 					<?php endif; ?>
 
 					<?php if ($image_file_type != 'jpg' && $image_file_type != 'jpeg' && $image_file_type != 'png' && $image_file_type != 'gif'): ?>
-						<span>File Format Not Supported</span>
+						<strong>File Format Not Supported</strong>
 					<?php endif; ?>
 				</div>
 			<?php elseif (isset($_POST['submit']) && $upload_ok == 1): ?>
 				<div class="mx-auto alert alert-success pt-3 text-center" role="alert">
-					<strong>Image Successfully Uploaded</strong>
+					<strong>Image Successfully Verified</strong>
 					<br>
 				</div>
 			<?php endif; ?>
