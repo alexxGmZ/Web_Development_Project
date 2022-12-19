@@ -35,21 +35,6 @@
 	<title>Log-In</title>
 	<link href="./style/login_css.css" rel="stylesheet" type="text/css">
 
-	
-	<style>
-	      body {
-		background-image: linear-gradient(to bottom, rgba(0.027, 0.027, 0, 0), rgba(0, 0, 0, 0)), url('meme_background.jpg');
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: 100% 100%;
-		color: white;
-	      }
-
-	      h1 {
-		text-shadow: 2px 2px #000000;
-	      }
-	</style>
-	
 	<?php
 		// global requirements: favicon, global_style.css, Bootstrap, and Global Font
 		require_once './partial/global_requirements.html';
