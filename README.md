@@ -13,13 +13,24 @@ You can edit or optimize the code, Just follow the Rules
 </p>
 
 ### Table of Contents:
+* [Rules for Maintaining This Project](#Rules-for-Maintaining-This-Project)
 * [Contributing Members](#Contributing-Members)
 * [Dependencies](#Dependencies)
-* [Rules for Maintaining This Project](#Rules-for-Maintaining-This-Project)
 * [Things To Do](#Things-To-Do)
 * [Database](#Database)
 
 <br>
+
+### Rules for Maintaining This Project
+
+* Use TABS for indention for uniformity in all editors that uses TABS, do not convert tabs to spaces.
+* Follow Proper indention formatting.
+* Code readability is priority, "It's okay to be buggy as long as readable".
+* Push changes in the ```testing``` branch because ```main``` is for production only, which means it should be stable and has little bugs.
+* Every page should have their own separate CSS file.
+* Avoid adding CSS or ```<style></style>``` tags or attributes inside the page file.
+* Create an Issue Report in the "[Issues](https://github.com/alexxShandsome/Web_Development_Project/issues)" tab.
+
 
 #### Contributing Members:
 
@@ -32,15 +43,6 @@ You can edit or optimize the code, Just follow the Rules
 * Bootstrap Version 5
 * XAMPP
 * XAMPP for Linux
-
-#### Rules for Maintaining This Project
-
-* Use TABS for indention for uniformity in all editors that uses TABS, do not convert tabs to spaces.
-* Follow Proper indention formatting.
-* Code readability is priority, "It's okay to be buggy as long as readable".
-* Push changes in the ```testing``` branch because ```main``` is for production only, which means it should be stable and has little bugs.
-* Every page should have their own separate CSS file.
-* Create an Issue Report in the "[Issues](https://github.com/alexxShandsome/Web_Development_Project/issues)" tab.
 
 #### Things To Do:
 
