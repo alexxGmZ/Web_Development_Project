@@ -47,13 +47,12 @@ p.bio {
 	/* For the Tabs in User profile */
 
 /* for tab container */
-.profile-tabs {
+.profile_area .profile-tabs {
 	display: flex;
 	flex-wrap: wrap;
 	max-width: 830px;
 	margin: 30px auto;
 	padding: 10px;
-	justify-content: space-between;
 }
 
 /* to remove the radio input button */
@@ -62,15 +61,17 @@ p.bio {
 }
 
 /* for the label which is two tab(Timeline and About) */
-.profile-tabs label {
-	padding: 10px;
+.profile_area .profile-tabs label {
+	padding: 8px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	background-color: #a8a1a1;
 	font-weight: 600;	
 	margin-right: 20px;
+	margin-bottom: 20px;
 	cursor: pointer;
-	border-radius: 8px 8px 0 0;
+	border-radius: 8px;
 	transition: background-color .3s;
-	width: 49.5%;
+	width: min-content;
 }
 
 /* the container for all the content */
@@ -80,6 +81,7 @@ p.bio {
 	background-color: #ccc;
 	order: 1;
 	display: none;
+	border-radius: 10px;
 }
 
 /* if cursor hover to the tabs */
@@ -100,7 +102,7 @@ p.bio {
 /* if the tab is clicked the background-color change  */
 .profile-tabs input[type="radio"]:checked + label {
 	background-color: #ccc;
-	border-top: solid;
+	border-bottom: 2px solid;
 	border-color: #4b4444;
 }
 	/* End of the Tabs in User profile */
