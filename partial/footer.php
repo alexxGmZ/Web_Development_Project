@@ -1,4 +1,4 @@
-<footer class="border-top fw-normal small mt-5 pt-4 pb-3 ps-4 pe-4">
+<footer class="border-top fw-normal small mt-5 pt-4 pb-3 ps-4 pe-4 bg-white">
 	<div class="row mb-3">
 		<div class="col me-3">
 			<p class="fw-bold">Prepared by:</p>
