@@ -38,8 +38,7 @@
 			<?php endif ?>
 
 			<div class="row">
-				<!-- when not logged in, clicking will redirect to login page -->
-				<a class="text-decoration-none text-dark" href="<?php echo (isset($_SESSION['is_logged_in']) ? "" : "./login.php") ?>">
+				<a class="text-decoration-none text-dark" href="<?php echo (isset($_SESSION['is_logged_in']) ? '' : './login.php') ?>">
 					<div class="row">
 						<div class="col-auto me-2 profile-pic-container">
 							<img class="poster-profile-pic" src="<?php echo $poster_profile_pic; ?>">
@@ -47,6 +46,7 @@
 						<b class="col align-self-center"><?php echo $poster; ?></b>
 					</div>
 				</a>
+				<!-- when not logged in, clicking will redirect to login page -->
 			</div>
 
 			<h3 class="text-center"><?php echo $post["TITLE"];?></h3>

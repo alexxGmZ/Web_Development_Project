@@ -31,7 +31,11 @@
 	<?php
 		//Access the Specific Data from the Array
 		//Assign the 'user_info' to variable $User to easily access its data individually
-		$User = $_SESSION['user_info'];
+		// if ($_SESSION['visit_other_profile'] == true)
+		// 	$User = $_SESSION['other_user_info'][$_SESSION['visited_id']];
+		// else
+			$User = $_SESSION['user_info'];
+
 		// echo "<pre>";
 		// var_dump($User);
 		// echo "</pre>";

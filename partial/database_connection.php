@@ -4,6 +4,18 @@
 	// var_dump($_SESSION);
 	// echo '</pre>';
 
+	// echo '<pre>';
+	// var_dump($_SESSION['other_user_info']);
+	// echo '</pre>';
+
+	// echo '<pre>';
+	// var_dump($_SESSION['visit_self_profile']);
+	// var_dump($_SESSION['visit_others_profile']);
+	// var_dump($_SESSION['visited_id']);
+	// echo '</pre>';
+
+	// echo $_SERVER['PHP_SELF'];
+
 	// database connection (old database connection)
 	// $pdo = new PDO('mysql:host=localhost;port=3306;dbname=article_site', 'root', '');
 
@@ -51,7 +63,6 @@
 	}
 
 	function get_user_login($email, $password, $pdo){
-
 		//$password = md5($password);
 		$statement = $pdo->prepare('
 			SELECT * FROM `Registered_Users`
@@ -60,7 +71,6 @@
 
 		$statement->bindValue(':EMAIL', $email);
 		$statement->bindValue(':PASSWORD', $password);
-
 		$statement->execute();
 
 		$users = $statement->fetchAll(PDO::FETCH_ASSOC); // returns associative 2 dimensional array
@@ -89,4 +99,29 @@
 		return "./uploaded_files/profile_pics/" . $profile_pic[0];
 	}
 
+	function get_other_user_info($pdo, $user_id){
+		$statement = $pdo->prepare('
+			SELECT * FROM Registered_Users
+			WHERE USER_ID=?
+			LIMIT 1
+		');
+		// $statement->bindValue(':USER_ID', $user_id);
+		$statement->execute([$user_id]);
+		$user_info = $statement->fetchAll(PDO::FETCH_ASSOC);
+		$user_info['row_count'] = $statement->rowCount();
+		return $user_info[0];
+	}
+
+	function visit_self_profile(){
+		if (strpos($_SERVER["PHP_SELF"], "user_profile.php")){
+			$_SESSION['visit_self_profile'] = true;
+			$_SESSION['visit_others_profile'] = false;
+		}
+	}
+
+	function visit_others_profile(){
+		// $_SESSION['visited_id'] = $user_id;
+		$_SESSION['visit_self_profile'] = false;
+		$_SESSION['visit_others_profile'] = true;
+	}
 ?>
