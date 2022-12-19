@@ -1,7 +1,7 @@
 # Web Development Project
 
 <p align="center">
-	<img src="./assets/images/logo 1 white.jpg">
+   <img src="./assets/images/logo 1 white.jpg">
 </p>
 
 You can edit or optimize the code, Just follow the Rules
@@ -9,7 +9,7 @@ You can edit or optimize the code, Just follow the Rules
 ## This is the Web Development Project Repository for Finals
 
 <p align="center">
-	<img src="./assets/images/logo 2.png">
+   <img src="./assets/images/logo 2.png">
 </p>
 
 ### Table of Contents:
@@ -45,13 +45,11 @@ You can edit or optimize the code, Just follow the Rules
 #### Things To Do:
 
 * Change Color Scheme (Lean more on Pastel or Lighter color)
-* Restructure Database and its Tables to Fit the new Project
 * Redesign Landing Page (```landing.php```)
 * Redesign Registration Page (```registration.php```)
 * Redesign Login Page (```login.php```)
 * Redesign New Post Page (```new_post.php```)
 * Improve Navbar design (```navbar.php``` and ```logged_in_navbar.php```)
-* Create a logged out user page (view ```user_profile.php``` when logged out)
 
 <br>
 
