@@ -35,6 +35,21 @@
 	<title>Log-In</title>
 	<link href="./style/login_css.css" rel="stylesheet" type="text/css">
 
+	
+	<style>
+	      body {
+		background-image: linear-gradient(to bottom, rgba(0.027, 0.027, 0, 0), rgba(0, 0, 0, 0)), url('meme_background.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: 100% 100%;
+		color: white;
+	      }
+
+	      h1 {
+		text-shadow: 2px 2px #000000;
+	      }
+	</style>
+	
 	<?php
 		// global requirements: favicon, global_style.css, Bootstrap, and Global Font
 		require_once './partial/global_requirements.html';
@@ -43,9 +58,9 @@
 <body class="">
 	<div class="text-center mb-3">
 		<a href="./landing.php">
-			<img class="logo mt-4" src="./assets/images/logo 1 trimmed.png">
+			<img class="logo mt-4" src="./assets/images/logo 1 white trimmed.png" style="width: 300px">
 		</a>
-		<h1 class="p-3 fw-bold">Log-In</h1>
+		<h1 class="p-3 fw-bold text-white">Log-In</h1>
 
 		<!-- Error Message -->
 		<?php if (isset($_GET['error'])): ?>
@@ -58,7 +73,7 @@
 	</div>
 
 
-	<div class="border shadow login_area rounded-3 p-3">
+	<div class="border shadow login_area rounded-3 p-3 bg-white">
 		<form class="m-2" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 			<!-- Email Input -->
 			<div class="form-floating mb-3">
