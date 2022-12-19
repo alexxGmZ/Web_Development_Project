@@ -140,14 +140,14 @@
 			require './partial/navbar.php';
 	?>
 	<!-- End of Navigation Bar -->
-	
+
 	<!-- Menu -->
 	<div id="mySidenav" class="sidenav pt-8">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="registration.php">Pinoy Memes</a>
-		<a href="registration.php">Anime</a>
-		<a href="registration.php">Animals</a>
-		<a href="registration.php">Funniest Meme</a>
+		<a href="<?php echo (isset($_SESSION['is_logged_in']) ? './landing.php' : './login.php') ?>">Pinoy Memes</a>
+		<a href="<?php echo (isset($_SESSION['is_logged_in']) ? './landing.php' : './login.php') ?>">Anime</a>
+		<a href="<?php echo (isset($_SESSION['is_logged_in']) ? './landing.php' : './login.php') ?>">Animals</a>
+		<a href="<?php echo (isset($_SESSION['is_logged_in']) ? './landing.php' : './login.php') ?>">Funniest Meme</a>
 	</div>
 
 	<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
@@ -161,8 +161,8 @@
 		  document.getElementById("mySidenav").style.width = "0";
 		}
 	</script>
-	
-	
+
+
 	<div class="post-body">
 		<?php
 			for($index = 0 ; $index < $row_limit ; $index++){
