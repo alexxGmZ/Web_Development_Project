@@ -79,6 +79,17 @@
 		return $users;
 	}
 
+	function get_personal_posts($pdo, $user_id){
+		$statement = $pdo->prepare('
+			SELECT * FROM `Written_Posts`
+			WHERE USER_ID = :USER_ID
+		');
+		$statement->bindValue(':USER_ID', $user_id);
+		$statement->execute();
+		$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+		return $posts;
+	}
+
 	// fetch USER_NAME from Registered_Users database based on the USER_ID inside the Written_Posts database
 	function get_poster_user_name($pdo, $user_id){
 		$statement = $pdo->prepare('

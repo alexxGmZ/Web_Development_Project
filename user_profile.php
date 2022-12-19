@@ -84,6 +84,14 @@
 					<h4>Your timeline</h4>
 				</center>
 				Posts Here...
+				<?php
+					$posts = get_personal_posts($pdo, $User['USER_ID']);
+					foreach ($posts as $post){
+						echo "<pre>";
+						var_dump($post);
+						echo "</pre>";
+					}
+				?>
 			</div>
 			<!-- End of Timeline-Tab -->
 
