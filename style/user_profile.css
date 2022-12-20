@@ -127,3 +127,64 @@ p.bio {
 		border-bottom: 3px solid;
 	}
 /* End About Container */
+
+
+
+/* for the timeline posts */
+
+/* for post container */
+.post-container {
+	margin-bottom: 10px;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 45px 5px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.post-container div.poster-info {
+	display: flex;
+	min-height: 70px;
+	line-height: 70px;
+	/* margin: 10px; */
+}
+/* for poster photo */
+.post-container div.poster-info .poster-photo {
+	height: 53px;
+	width: 53px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+/* for poster username */
+.post-container div.poster-info .user-name {
+	font-size: 18px;
+	initial-letter: 2px;
+	margin: 3px;
+}
+
+/* for post-title */
+.post-container .post-title {
+	font-size: 25px;
+	margin: 10px;
+}
+
+/* for posted photo */ 
+.post-container .posted-photo {
+	height: min-content;
+}
+.post-container .posted-photo div.photo-container {
+	border: 1px solid rgb(206, 204, 204);
+	padding: 10px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.post-container .posted-photo div.photo-container a {
+	width: 100%;
+}
+.post-container .posted-photo div.photo-container img {
+	border-radius: 10px;
+	height: inherit;
+	width: inherit;
+	object-fit: scale-down;
+}
+/* end for the timeline posts */
