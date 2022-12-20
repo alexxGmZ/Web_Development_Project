@@ -41,10 +41,11 @@
 	?>
 </head>
 <body class="">
-	<div class="text-center mb-4">
+	<div class="text-center mb-3">
 		<a href="./landing.php">
-			<img class="logo mt-4" src="./assets/images/logo 1 white.jpg">
+			<img class="logo mt-4" src="./assets/images/logo 1 white trimmed.png" style="width: 300px">
 		</a>
+		<h1 class="p-3 fw-bold text-white">Log-In</h1>
 
 		<!-- Error Message -->
 		<?php if (isset($_GET['error'])): ?>
@@ -58,7 +59,6 @@
 
 
 	<div class="border shadow login_area rounded-3 p-3 bg-white">
-		<h1 class="pb-3 fw-bold text-center">Log-In</h1>
 		<form class="m-2" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 			<!-- Email Input -->
 			<div class="form-floating mb-3">
