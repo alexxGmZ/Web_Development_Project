@@ -97,7 +97,7 @@
 							<div class="row">
 								<div class="col-auto me-2 profile-pic-container">
 									<a class="profile-picture" href="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" target="_self">
-										<img class="poster-profile-pic" src="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>">
+										<img class="poster-profile-pic" src="<?php echo $profile_pic; ?>">
 									</a>
 								</div>
 								<b class="col align-self-center"><?php echo $User["USER_NAME"]; ?></b>
