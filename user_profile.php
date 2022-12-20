@@ -40,7 +40,7 @@
 		// var_dump($User);
 		// echo "</pre>";
 
-		$profile_pic = $User["PROFILE_PIC"];
+		$profile_pic = "./uploaded_files/profile_pics/" . $User["PROFILE_PIC"];
 	?>
 
 	<div class="profile_area border shadow-lg rounded-3 p-3">
@@ -48,8 +48,8 @@
 		<center>
 			<!-- profile picture -->
 			<div class="picture-container">
-				<a class="profile-picture" href="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" target="_self">
-					<img class="profile-picture border border-2" src="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" alt="User_image">
+				<a class="profile-picture" href="<?php echo $profile_pic; ?>" target="_self">
+					<img class="profile-picture border border-2" src="<?php echo $profile_pic; ?>" alt="User_image">
 				</a>
 			</div>
 
@@ -83,7 +83,7 @@
 				<center>
 					<h4>Your timeline</h4>
 				</center>
-				
+
 				<!-- Timeline Posts -->
 				<?php
 					$posts = get_personal_posts($pdo, $User['USER_ID']);
@@ -92,72 +92,27 @@
 						// echo "<pre>";
 						// var_dump($post);
 						// echo "</pre>";
-				?>	
-
-				<div class="post-container">
-					<div class="poster-info">
-						<div class="poster-photo">
-							<!-- poster picture -->
-							<a class="profile-picture" href="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" target="_self">
-								<img class="profile-picture border border-2" src="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" alt="User_image">
-							</a>
-						</div>
-						<!-- username of the poster -->
-						<div class="user-name"><b><?php echo $User["USER_NAME"]; ?></b></div>
-					</div>
-
-					<!-- title of post -->
-					<div class="post-title">
-						<center>
-							<b><?php echo $post["TITLE"]; ?></b>
-						</center>
-					</div>
-
-					<div class="posted-photo">
-						<div class="photo-container">
-							<!-- the posted meme photo -->
-							<a href="./uploaded_files/memes_posted/<?php echo $post["POST_IMAGE"]; ?>" target="_self">
-								<img src="./uploaded_files/memes_posted/<?php echo $post["POST_IMAGE"]; ?>" alt="posted-photo">
-							</a>
-						</div>
-						
-						<div>
-							<div class="row pt-3">	
-								<div class="col justify-content-end d-inline-flex">
-									<button class="btn btn-outline-primary" type="button">
-										<div class="row g-0">
-											<img class="col me-1" src="./assets/icons/caret-up.svg">
-											<label class="col"><?php echo $post["UPVOTE"];?></label>
-										</div>
-									</button>
+				?>
+						<div class="border rounded shadow mb-4 p-4">
+							<div class="row">
+								<div class="col-auto me-2 profile-pic-container">
+									<img class="poster-profile-pic" src="<?php echo $profile_pic; ?>">
 								</div>
-								<div class="col-auto p-0 text-center">
-									<button class="btn btn-outline-danger" type="button">
-										<div class="row g-0">
-											<img class="col me-1" src="./assets/icons/caret-down.svg">
-											<label class="col"><?php echo $post["DOWNVOTE"];?></label>
-										</div>
-									</button>
-								</div>
-								<div class="col">
-									<button class="btn btn-outline-success rounded-pill" type="button">
-										<div class="row g-0">
-											<img class="col me-1" src="./assets/icons/chat-left.svg">
-											<label class="col">0</label>
-										</div>
-									</button>
-								</div>
+								<b class="col align-self-center"><?php echo $User["USER_NAME"]; ?></b>
 							</div>
+
+							<h3 class="text-center"><?php echo $post["TITLE"];?></h3>
+
+							<div class="text-center border rounded-2 p-2">
+								<img class="img-fluid rounded mx-auto d-block" src="./uploaded_files/memes_posted/<?php echo $post['POST_IMAGE'];?>">
+							</div>
+
 						</div>
-
-					</div>
-				</div>
-
-				<?php	
+				<?php
 					}
 				?>
 				<!-- Timeline Posts -->
-				
+
 			</div>
 			<!-- End of Timeline-Tab -->
 
