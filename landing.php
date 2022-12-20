@@ -11,6 +11,9 @@
 	$statement->execute();
 	$row_limit = $statement->rowCount();
 	$post = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+	$upvote_post = $_POST['upvote_post'] ?? null;
+	$downvote_post = $_POST['downvote_post'] ?? null;
 ?>
 
 <?php
