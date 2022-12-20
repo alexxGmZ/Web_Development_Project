@@ -110,6 +110,12 @@
 									<img class="img-fluid rounded mx-auto d-block" src="./uploaded_files/memes_posted/<?php echo $post['POST_IMAGE'];?>">
 								</a>
 							</div>
+								<!-- show upvote and downvote counts -->
+							<p>
+								<b>Upvotes:<?php echo $post["UPVOTE"];?></b>
+								<br>
+								<b> Downvotes:<?php echo $post["DOWNVOTE"];?></b>
+							</p>
 
 						</div>
 				<?php
