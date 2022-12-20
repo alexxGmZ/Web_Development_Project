@@ -40,9 +40,9 @@
 		if (!isset($agree_terms1) || strlen(trim($agree_terms1)) == 0) $has_error = 1;
 		if (!isset($agree_terms2) || strlen(trim($agree_terms2)) == 0) $has_error = 1;
 
-//
-//    Profile Pic Upload Validation
-//
+		//
+		// Profile Pic Upload Validation
+		//
 		$target_directory = './uploaded_files/profile_pics/';
 		$image_file_type = strtolower(pathinfo($_FILES['profile_pic']['name'], PATHINFO_EXTENSION));
 

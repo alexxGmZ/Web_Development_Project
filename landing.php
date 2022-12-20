@@ -85,7 +85,10 @@
 						</a>
 					</div>
 
+				<!-- when logged in, the user can upvote or downvote -->
 				<?php else: ?>
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+					</form>
 					<div class="col justify-content-end d-inline-flex">
 						<button class="btn btn-outline-primary" type="button">
 							<div class="row g-0">

@@ -16,8 +16,10 @@
 
 	// echo $_SERVER['PHP_SELF'];
 
-	// database connection (old database connection)
-	// $pdo = new PDO('mysql:host=localhost;port=3306;dbname=article_site', 'root', '');
+	// echo '<pre>';
+	// var_dump($_SERVER);
+	// echo '</pre>';
+	// echo "request method " . $_SERVER['REQUEST_METHOD'];
 
 	// new database connection for memesite
 	$pdo = new PDO('mysql:host=localhost;port=3306;dbname=memesite', 'root', '');
@@ -161,6 +163,30 @@
 			SET DOWNVOTE = DOWNVOTE + 1
 			WHERE POST_ID = :POST_ID
 		');
+		$statement->bindValue(':POST_ID', $post_id);
+		$statement->execute();
+	}
+
+	function record_user_upvote($pdo, $user_id, $post_id){
+		$statement = $pdo->prepare('
+			INSERT INTO User_Upvote
+				(USER_ID, POST_ID)
+			VALUES
+				(:USER_ID, :POST_ID)
+		');
+		$statement->bindValue(':USER_ID', $user_id);
+		$statement->bindValue(':POST_ID', $post_id);
+		$statement->execute();
+	}
+
+	function record_user_downvote($pdo, $user_id, $post_id){
+		$statement = $pdo->prepare('
+			INSERT INTO User_Downvote
+				(USER_ID, POST_ID)
+			VALUES
+				(:USER_ID, :POST_ID)
+		');
+		$statement->bindValue(':USER_ID', $user_id);
 		$statement->bindValue(':POST_ID', $post_id);
 		$statement->execute();
 	}
