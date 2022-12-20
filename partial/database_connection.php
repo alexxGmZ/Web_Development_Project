@@ -68,7 +68,6 @@
 			SELECT * FROM `Registered_Users`
 			WHERE `EMAIL` = :EMAIL AND `PASSWORD` = :PASSWORD
 		');
-
 		$statement->bindValue(':EMAIL', $email);
 		$statement->bindValue(':PASSWORD', $password);
 		$statement->execute();
@@ -86,6 +85,7 @@
 		');
 		$statement->bindValue(':USER_ID', $user_id);
 		$statement->execute();
+
 		$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 		return $posts;
 	}
@@ -93,9 +93,13 @@
 	// fetch USER_NAME from Registered_Users database based on the USER_ID inside the Written_Posts database
 	function get_poster_user_name($pdo, $user_id){
 		$statement = $pdo->prepare('
-			SELECT USER_NAME FROM Registered_Users WHERE USER_ID=? LIMIT 1
+			SELECT USER_NAME FROM Registered_Users
+			WHERE USER_ID = :USER_ID
+			LIMIT 1
 		');
-		$statement->execute([$user_id]);
+		$statement->bindValue(':USER_ID', $user_id);
+		$statement->execute();
+
 		$poster = $statement->fetch();
 		return $poster[0];
 	}
@@ -103,9 +107,13 @@
 	// fetch PROFILE_PIC from Registered_Users database based on the USER_ID inside the Written_Posts database
 	function get_poster_profile_pic($pdo, $user_id){
 		$statement = $pdo->prepare('
-			SELECT PROFILE_PIC FROM Registered_Users WHERE USER_ID=? LIMIT 1
+			SELECT PROFILE_PIC FROM Registered_Users
+			WHERE USER_ID = :USER_ID
+			LIMIT 1
 		');
-		$statement->execute([$user_id]);
+		$statement->bindValue(':USER_ID', $user_id);
+		$statement->execute();
+
 		$profile_pic = $statement->fetch();
 		return "./uploaded_files/profile_pics/" . $profile_pic[0];
 	}
@@ -113,11 +121,12 @@
 	function get_other_user_info($pdo, $user_id){
 		$statement = $pdo->prepare('
 			SELECT * FROM Registered_Users
-			WHERE USER_ID=?
+			WHERE USER_ID = :USER_ID
 			LIMIT 1
 		');
-		// $statement->bindValue(':USER_ID', $user_id);
-		$statement->execute([$user_id]);
+		$statement->bindValue(':USER_ID', $user_id);
+		$statement->execute();
+
 		$user_info = $statement->fetchAll(PDO::FETCH_ASSOC);
 		$user_info['row_count'] = $statement->rowCount();
 		return $user_info[0];
@@ -136,9 +145,23 @@
 		$_SESSION['visit_others_profile'] = true;
 	}
 
-	function upvote_post(){
+	function upvote_post($pdo, $user_id, $post_id){
+		$statement = $pdo->prepare('
+			UPDATE Written_Posts
+			SET UPVOTE = UPVOTE + 1
+			WHERE POST_ID = :POST_ID
+		');
+		$statement->bindValue(':POST_ID', $post_id);
+		$statement->execute();
 	}
 
-	function downvote_post(){
+	function downvote_post($pdo, $user_id, $post_id){
+		$statement = $pdo->prepare('
+			UPDATE Written_Posts
+			SET DOWNVOTE = DOWNVOTE + 1
+			WHERE POST_ID = :POST_ID
+		');
+		$statement->bindValue(':POST_ID', $post_id);
+		$statement->execute();
 	}
 ?>
