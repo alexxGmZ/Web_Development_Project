@@ -96,7 +96,9 @@
 						<div class="border rounded shadow mb-4 p-4">
 							<div class="row">
 								<div class="col-auto me-2 profile-pic-container">
-									<img class="poster-profile-pic" src="<?php echo $profile_pic; ?>">
+									<a class="profile-picture" href="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>" target="_self">
+										<img class="poster-profile-pic" src="./uploaded_files/profile_pics/<?php echo $profile_pic; ?>">
+									</a>
 								</div>
 								<b class="col align-self-center"><?php echo $User["USER_NAME"]; ?></b>
 							</div>
@@ -104,7 +106,9 @@
 							<h3 class="text-center"><?php echo $post["TITLE"];?></h3>
 
 							<div class="text-center border rounded-2 p-2">
-								<img class="img-fluid rounded mx-auto d-block" src="./uploaded_files/memes_posted/<?php echo $post['POST_IMAGE'];?>">
+								<a href="./uploaded_files/memes_posted/<?php echo $post['POST_IMAGE'];?>" target="_self">
+									<img class="img-fluid rounded mx-auto d-block" src="./uploaded_files/memes_posted/<?php echo $post['POST_IMAGE'];?>">
+								</a>
 							</div>
 
 						</div>
