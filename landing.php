@@ -46,7 +46,6 @@
 						<b class="col align-self-center"><?php echo $poster; ?></b>
 					</div>
 				</a>
-				<!-- when not logged in, clicking will redirect to login page -->
 			</div>
 
 			<h3 class="text-center"><?php echo $post["TITLE"];?></h3>

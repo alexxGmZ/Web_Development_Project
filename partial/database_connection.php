@@ -135,4 +135,10 @@
 		$_SESSION['visit_self_profile'] = false;
 		$_SESSION['visit_others_profile'] = true;
 	}
+
+	function upvote_post(){
+	}
+
+	function downvote_post(){
+	}
 ?>
