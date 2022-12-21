@@ -5,12 +5,16 @@
 	// new database (memesite)
 	$statement = $pdo->prepare('
 		SELECT * FROM `Written_Posts`
-		ORDER BY `Written_Posts`.`DATE_POSTED` DESC
+		ORDER BY `Written_Posts`.`UPVOTE` DESC
 	');
 
 	$statement->execute();
 	$row_limit = $statement->rowCount();
 	$post = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+	// echo "<pre>";
+	// var_dump($_POST);
+	// echo "</pre>";
 
 	$upvote_post = $_POST['upvote_post'] ?? null;
 	$downvote_post = $_POST['downvote_post'] ?? null;
@@ -18,7 +22,7 @@
 
 <?php
 	// funniest meme layout design function
-	function posted_meme_layout($post, $index, $pdo){
+	function posted_meme_layout($post, $index, $pdo, $upvote_post, $downvote_post){
 		// debugging purposes
 		// echo "<pre>";
 		// var_dump($post);
@@ -46,7 +50,7 @@
 						<div class="col-auto me-2 profile-pic-container">
 							<img class="poster-profile-pic" src="<?php echo $poster_profile_pic; ?>">
 						</div>
-						<b class="col align-self-center"><?php echo $poster; ?></b>
+						<b class="col align-self-center"><?php echo $poster . " post id: " . $post["POST_ID"]; ?></b>
 					</div>
 				</a>
 			</div>
@@ -87,32 +91,43 @@
 
 				<!-- when logged in, the user can upvote or downvote -->
 				<?php else: ?>
-					<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+					<iframe name="post_buttons" style="display:none;"></iframe>
+					<form class="row" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" target="post_buttons">
+						<div class="col justify-content-end d-inline-flex">
+							<button name="upvote_post" type="radio" class="btn btn-outline-primary" type="button">
+								<div class="row g-0">
+									<img class="col me-1" src="./assets/icons/caret-up.svg">
+									<label class="col"><?php echo $post['UPVOTE']; ?></label>
+								</div>
+							</button>
+						</div>
+						<div class="col-auto p-0 text-center">
+							<button name="downvote_post" type="radio" class="btn btn-outline-danger" type="button">
+								<div class="row g-0">
+									<img class="col me-1" src="./assets/icons/caret-down.svg">
+									<label class="col"><?php echo $post['DOWNVOTE']; ?></label>
+								</div>
+							</button>
+						</div>
+						<div class="col">
+							<button class="btn btn-outline-success rounded-pill" type="button">
+								<div class="row g-0">
+									<img class="col me-1" src="./assets/icons/chat-left.svg">
+									<label class="col">0</label>
+								</div>
+							</button>
+						</div>
+						<?php
+							if (isset($_POST['upvote_post'])){
+								upvote_post($pdo, $_SESSION["user_info"]["USER_ID"], $post["POST_ID"]);
+								record_user_upvote($pdo, $_SESSION["user_info"]["USER_ID"], $post["POST_ID"]);
+							}
+							if (isset($_POST['downvote_post'])){
+								downvote_post($pdo, $_SESSION["user_info"]["USER_ID"], $post["POST_ID"]);
+								record_user_downvote($pdo, $_SESSION["user_info"]["USER_ID"], $post["POST_ID"]);
+							}
+						?>
 					</form>
-					<div class="col justify-content-end d-inline-flex">
-						<button class="btn btn-outline-primary" type="button">
-							<div class="row g-0">
-								<img class="col me-1" src="./assets/icons/caret-up.svg">
-								<label class="col"><?php echo $post["UPVOTE"];?></label>
-							</div>
-						</button>
-					</div>
-					<div class="col-auto p-0 text-center">
-						<button class="btn btn-outline-danger" type="button">
-							<div class="row g-0">
-								<img class="col me-1" src="./assets/icons/caret-down.svg">
-								<label class="col"><?php echo $post["DOWNVOTE"];?></label>
-							</div>
-						</button>
-					</div>
-					<div class="col">
-						<button class="btn btn-outline-success rounded-pill" type="button">
-							<div class="row g-0">
-								<img class="col me-1" src="./assets/icons/chat-left.svg">
-								<label class="col">0</label>
-							</div>
-						</button>
-					</div>
 				<?php endif ?>
 			</div>
 		</div>
@@ -172,12 +187,15 @@
 		<?php
 			for($index = 0 ; $index < $row_limit ; $index++){
 				// when upvote and downvote is null in the database
-				if ($post[$index]['UPVOTE'] == NULL || $post[$index]['UPVOTE'] < 0)
-					$post[$index]['UPVOTE'] = 0;
-				if ($post[$index]['DOWNVOTE'] == NULL || $post[$index]['DOWNVOTE'] < 0)
-					$post[$index]['DOWNVOTE'] = 0;
+				// if ($post[$index]['UPVOTE'] == NULL || $post[$index]['UPVOTE'] < 0)
+				// 	$post[$index]['UPVOTE'] = 0;
+				// if ($post[$index]['DOWNVOTE'] == NULL || $post[$index]['DOWNVOTE'] < 0)
+				// 	$post[$index]['DOWNVOTE'] = 0;
 
-				posted_meme_layout($post[$index], $index, $pdo);
+				posted_meme_layout($post[$index], $index, $pdo, $upvote_post, $downvote_post);
+		?>
+
+		<?php
 			}
 		?>
 	</div>

@@ -155,6 +155,7 @@
 		');
 		$statement->bindValue(':POST_ID', $post_id);
 		$statement->execute();
+		// echo "post upvoted ";
 	}
 
 	function downvote_post($pdo, $user_id, $post_id){
@@ -177,6 +178,7 @@
 		$statement->bindValue(':USER_ID', $user_id);
 		$statement->bindValue(':POST_ID', $post_id);
 		$statement->execute();
+		// echo "upvoted recorded ";
 	}
 
 	function record_user_downvote($pdo, $user_id, $post_id){

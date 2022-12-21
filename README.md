@@ -113,7 +113,16 @@ CREATE TABLE User_Downvote (
    FOREIGN KEY (POST_ID) REFERENCES Written_Posts(POST_ID)
 );
 
--- Add more tables
+-- to avoid NULL
+UPDATE Written_Posts
+SET UPVOTE = '0'
+WHERE UPVOTE IS NULL
+
+-- to avoid NULL
+UPDATE Written_Posts
+SET DOWNVOTE = '0'
+WHERE DOWNVOTE IS NULL
+
 ```
 
 **Successful Creation of Database should look like this in phpmyadmin**
