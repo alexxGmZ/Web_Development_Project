@@ -22,7 +22,7 @@
 
 <?php
 	// funniest meme layout design function
-	function posted_meme_layout($post, $index, $pdo, $upvote_post, $downvote_post){
+	function posted_meme_layout($post, $index, $pdo){
 		// debugging purposes
 		// echo "<pre>";
 		// var_dump($post);
@@ -45,7 +45,7 @@
 			<?php endif ?>
 
 			<div class="row">
-				<a class="text-decoration-none text-dark" href="<?php echo (isset($_SESSION['is_logged_in']) ? '' : './login.php') ?>">
+				<a class="col-auto text-decoration-none text-dark" href="<?php echo (isset($_SESSION['is_logged_in']) ? '' : './login.php') ?>">
 					<div class="row">
 						<div class="col-auto me-2 profile-pic-container">
 							<img class="poster-profile-pic" src="<?php echo $poster_profile_pic; ?>">
@@ -192,7 +192,7 @@
 				// if ($post[$index]['DOWNVOTE'] == NULL || $post[$index]['DOWNVOTE'] < 0)
 				// 	$post[$index]['DOWNVOTE'] = 0;
 
-				posted_meme_layout($post[$index], $index, $pdo, $upvote_post, $downvote_post);
+				posted_meme_layout($post[$index], $index, $pdo);
 		?>
 
 		<?php
